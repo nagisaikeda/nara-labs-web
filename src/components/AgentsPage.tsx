@@ -26,10 +26,10 @@ const agents: AgentCardData[] = [
     ],
     techStack: ["Moss", "MiniMax", "Deepgram", "LiveKit", "Qwen"],
     team: [
-      "Nagisa Ikeda",
       "Amogh Biju",
       "Shivoham Angal",
       "Jiawen Zhang",
+      "Nagisa Ikeda",
     ],
     keyInsight:
       "Retrieval latency is not merely a backend metric. In voice AI systems, latency directly impacts whether an agent feels responsive, trustworthy, and genuinely conversational.",
