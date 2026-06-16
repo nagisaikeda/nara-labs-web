@@ -30,7 +30,9 @@ export function TeamCard({ member, index }: TeamCardProps) {
         <h2 className="text-[18px] font-medium text-foreground mb-1">
           {member.name}
         </h2>
-        <p className="text-[13px] text-gradient-mint/80">{member.role}</p>
+        <h3 className="text-[13px] font-normal text-gradient-mint/80">
+          {member.role}
+        </h3>
         {member.linkedin && (
           <TeamLinkedInLink name={member.name} linkedin={member.linkedin} />
         )}
