@@ -91,16 +91,16 @@ export function Footer() {
               </p>
               <div className="space-y-3">
                 <a
-                  href="#"
+                  href="/team"
                   className="block text-[14px] text-muted hover:text-foreground transition-colors duration-300"
                 >
-                  About
+                  Team
                 </a>
                 <a
-                  href="#"
+                  href="/agents"
                   className="block text-[14px] text-muted hover:text-foreground transition-colors duration-300"
                 >
-                  Careers
+                  Agents
                 </a>
                 <a
                   href="#"
