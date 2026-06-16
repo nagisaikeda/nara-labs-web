@@ -33,6 +33,20 @@ const agents: AgentCardData[] = [
     ],
     keyInsight:
       "Retrieval latency is not merely a backend metric. In voice AI systems, latency directly impacts whether an agent feels responsive, trustworthy, and genuinely conversational.",
+    gallery: [
+      {
+        src: "/agents/probeiq/1.png",
+        alt: "ProbeIQ team at the YC × Moss Conversational AI Hackathon",
+      },
+      {
+        src: "/agents/probeiq/2.png",
+        alt: "ProbeIQ demo day presentation at Y Combinator",
+      },
+      {
+        src: "/agents/probeiq/3.png",
+        alt: "YC Conversational AI Hackathon event signage",
+      },
+    ],
   },
   {
     name: "Ahead",
@@ -58,6 +72,20 @@ const agents: AgentCardData[] = [
     badge: "Experimental",
     href: "https://ahead.nara-labs.com",
     hrefLabel: "Explore Ahead",
+    gallery: [
+      {
+        src: "/agents/ahead/1.jpg",
+        alt: "Ahead product interface screenshot",
+      },
+      {
+        src: "/agents/ahead/2.jpg",
+        alt: "Ahead decision simulation in action",
+      },
+      {
+        src: "/agents/ahead/3.jpg",
+        alt: "Ahead team building session",
+      },
+    ],
   },
 ];
 

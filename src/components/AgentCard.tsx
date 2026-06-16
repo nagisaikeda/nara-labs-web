@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { AgentGallery } from "@/components/AgentGallery";
 import type { AgentCardData } from "@/types/agent";
 
 type AgentCardProps = AgentCardData & {
@@ -69,6 +70,7 @@ export function AgentCard({
   badge,
   href,
   hrefLabel,
+  gallery,
   index = 0,
   variant = "default",
 }: AgentCardProps) {
@@ -122,6 +124,8 @@ export function AgentCard({
             </p>
           )}
         </div>
+
+        {gallery && gallery.length > 0 && <AgentGallery images={gallery} />}
 
         <div className="mb-8">
           <p className="text-[11px] font-semibold tracking-[0.15em] uppercase text-muted-soft mb-4">

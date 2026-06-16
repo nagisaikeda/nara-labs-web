@@ -1,3 +1,8 @@
+export type AgentGalleryImage = {
+  src: string;
+  alt: string;
+};
+
 export type AgentCardData = {
   name: string;
   label: string;
@@ -11,4 +16,5 @@ export type AgentCardData = {
   badge?: string;
   href?: string;
   hrefLabel?: string;
+  gallery?: AgentGalleryImage[];
 };

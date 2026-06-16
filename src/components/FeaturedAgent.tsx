@@ -26,6 +26,20 @@ const localPmOs: AgentCardData = {
     "Multi-agent orchestration",
   ],
   badge: "Featured",
+  gallery: [
+    {
+      src: "/agents/local-pm-os/1.png",
+      alt: "Team members building Local PM OS during the Dell × NVIDIA hackathon",
+    },
+    {
+      src: "/agents/local-pm-os/2.png",
+      alt: "Local PM OS demo day presentation at BuilderBase AI Factory",
+    },
+    {
+      src: "/agents/local-pm-os/3.png",
+      alt: "Local PM OS dashboard showing launch risk analysis, recommended actions, and live context signals",
+    },
+  ],
 };
 
 export function FeaturedAgent() {
