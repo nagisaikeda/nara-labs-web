@@ -3,16 +3,31 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   { href: "/#vision", label: "Research" },
-  { href: "https://ahead.nara-labs.com", label: "Ahead", external: true },
-  { href: "/#reasoning", label: "Systems" },
-  { href: "/agents", label: "Agents" },
+  { href: "/projects", label: "Projects" },
+  { href: "/agents", label: "Hackathons" },
   { href: "/team", label: "Team" },
 ] as const;
 
+function navLinkClass(isActive: boolean) {
+  return `text-[14px] transition-colors duration-300 ${
+    isActive
+      ? "text-foreground"
+      : "text-muted hover:text-foreground"
+  }`;
+}
+
 export function Navigation() {
+  const pathname = usePathname();
+
+  const isActive = (href: string) => {
+    if (href.startsWith("/#")) return false;
+    return pathname === href;
+  };
+
   return (
     <motion.nav
       initial={{ opacity: 0, y: -10 }}
@@ -35,38 +50,38 @@ export function Navigation() {
         </Link>
 
         <div className="hidden lg:flex items-center gap-7">
-          {navLinks.map((link) =>
-            "external" in link && link.external ? (
-              <a
-                key={link.label}
-                href={link.href}
-                className="text-[14px] text-muted hover:text-foreground transition-colors duration-300"
-              >
-                {link.label}
-              </a>
-            ) : (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="text-[14px] text-muted hover:text-foreground transition-colors duration-300"
-              >
-                {link.label}
-              </Link>
-            ),
-          )}
+          {navLinks.map((link) => (
+            <Link
+              key={link.label}
+              href={link.href}
+              className={navLinkClass(isActive(link.href))}
+              aria-current={isActive(link.href) ? "page" : undefined}
+            >
+              {link.label}
+            </Link>
+          ))}
         </div>
 
         <div className="flex items-center gap-3 sm:gap-4 shrink-0">
-          <div className="flex lg:hidden items-center gap-4">
+          <div className="flex lg:hidden items-center gap-3 sm:gap-4">
+            <Link
+              href="/projects"
+              className={navLinkClass(isActive("/projects"))}
+              aria-current={isActive("/projects") ? "page" : undefined}
+            >
+              Projects
+            </Link>
             <Link
               href="/agents"
-              className="text-[13px] text-muted hover:text-foreground transition-colors duration-300"
+              className={navLinkClass(isActive("/agents"))}
+              aria-current={isActive("/agents") ? "page" : undefined}
             >
-              Agents
+              Hackathons
             </Link>
             <Link
               href="/team"
-              className="text-[13px] text-muted hover:text-foreground transition-colors duration-300"
+              className={navLinkClass(isActive("/team"))}
+              aria-current={isActive("/team") ? "page" : undefined}
             >
               Team
             </Link>

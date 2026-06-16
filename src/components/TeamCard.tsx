@@ -27,10 +27,10 @@ export function TeamCard({ member, index }: TeamCardProps) {
         />
       </div>
       <div className="flex-1 flex flex-col p-6 rounded-2xl border border-border bg-surface/30 hover:border-border-strong transition-colors duration-500">
-        <h2 className="text-[18px] font-medium text-foreground mb-1">
+        <h2 className="text-[18px] font-semibold text-foreground mb-1">
           {member.name}
         </h2>
-        <h3 className="text-[13px] font-normal text-gradient-mint/80">
+        <h3 className="text-[13px] font-normal text-muted">
           {member.role}
         </h3>
         {member.linkedin && (

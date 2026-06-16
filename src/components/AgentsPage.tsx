@@ -95,9 +95,9 @@ export function AgentsPage() {
       <GradientBackground />
       <Navigation />
       <PageHero
-        title="Agents"
-        subtitle="A collection of AI systems built through Nara Labs research, hackathons, and product experiments."
-        supportingText="We explore how intelligent systems can help humans reason, learn, decide, and collaborate more effectively."
+        title="Hackathons"
+        subtitle="A collection of AI agents and experiments built through Nara Labs hackathons, research sprints, and rapid prototypes."
+        supportingText="We explore how intelligent systems can help humans reason, learn, decide, and collaborate more effectively — often starting in high-intensity builder environments."
       />
 
       <FeaturedAgent />

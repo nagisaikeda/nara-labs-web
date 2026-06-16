@@ -97,10 +97,16 @@ export function Footer() {
                   Team
                 </a>
                 <a
+                  href="/projects"
+                  className="block text-[14px] text-muted hover:text-foreground transition-colors duration-300"
+                >
+                  Projects
+                </a>
+                <a
                   href="/agents"
                   className="block text-[14px] text-muted hover:text-foreground transition-colors duration-300"
                 >
-                  Agents
+                  Hackathons
                 </a>
                 <a
                   href="#"

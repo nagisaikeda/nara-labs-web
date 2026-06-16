@@ -1,6 +1,7 @@
 import type { TeamMember } from "@/types/team";
 import { SITE_URL } from "@/lib/site";
 import { TEAM_MEMBERS } from "@/data/team";
+import { PROJECTS } from "@/data/projects";
 
 function personSchema(member: TeamMember) {
   return {
@@ -50,9 +51,9 @@ export function getAgentsStructuredData() {
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Nara Labs AI Agents",
+    name: "Nara Labs Hackathon Projects",
     description:
-      "AI systems built through Nara Labs research, hackathons, and product experiments including Local PM OS, ProbeIQ, and Ahead.",
+      "Hackathon-built AI agents and experiments from Nara Labs including Local PM OS, ProbeIQ, and Ahead.",
     itemListElement: [
       {
         "@type": "ListItem",
@@ -79,5 +80,22 @@ export function getAgentsStructuredData() {
         url: "https://ahead.nara-labs.com",
       },
     ],
+  };
+}
+
+export function getProjectsStructuredData() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Nara Labs Projects",
+    description:
+      "Production-grade AI systems built by Team Nara Lab including Local PM OS, ProbeIQ, and Ahead.",
+    itemListElement: PROJECTS.map((project, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: project.name,
+      description: project.summary,
+      url: `${SITE_URL}/projects/${project.slug}`,
+    })),
   };
 }
