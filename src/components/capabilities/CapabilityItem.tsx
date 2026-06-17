@@ -1,10 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import type { Capability } from "@/types/capability";
+import type { CapabilityPreview } from "@/types/capability";
 
 type CapabilityItemProps = {
-  capability: Capability;
+  capability: CapabilityPreview;
   index: number;
 };
 

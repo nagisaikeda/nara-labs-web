@@ -1,8 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { CapabilityItem } from "@/components/capabilities/CapabilityItem";
-import { CAPABILITIES } from "@/data/capabilities";
+import { HOME_CAPABILITIES } from "@/data/capabilities";
 
 export function CapabilityGrid() {
   return (
@@ -24,7 +25,7 @@ export function CapabilityGrid() {
         </motion.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {CAPABILITIES.map((capability, index) => (
+          {HOME_CAPABILITIES.map((capability, index) => (
             <CapabilityItem
               key={capability.id}
               capability={capability}
@@ -32,6 +33,21 @@ export function CapabilityGrid() {
             />
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+          className="mt-12"
+        >
+          <Link
+            href="/capabilities"
+            className="inline-flex items-center text-[14px] text-muted hover:text-foreground transition-colors duration-300"
+          >
+            View technical capabilities →
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 const navLinks = [
   { href: "/projects", label: "Projects" },
   { href: "/build-log", label: "Build Log" },
-  { href: "/#capabilities", label: "Capabilities" },
+  { href: "/capabilities", label: "Capabilities" },
   { href: "/agents", label: "Hackathons" },
   { href: "/team", label: "Team" },
 ] as const;
@@ -80,8 +80,9 @@ export function Navigation() {
               Build Log
             </Link>
             <Link
-              href="/#capabilities"
-              className={navLinkClass(false)}
+              href="/capabilities"
+              className={navLinkClass(isActive("/capabilities"))}
+              aria-current={isActive("/capabilities") ? "page" : undefined}
             >
               Capabilities
             </Link>
