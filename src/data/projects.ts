@@ -153,6 +153,7 @@ export const PROJECTS: ProjectCaseStudy[] = [
     ],
     lessonsLearned:
       "Ahead clarified that strong AI products need more than a compelling interface. They need a specific user, urgent pain point, trusted reasoning layer, and clear differentiation from general-purpose AI assistants.",
+    previewImage: "/agents/ahead/preview.png",
     badge: "Experimental",
     seoDescription:
       "Ahead is an AI financial decision agent by Nara Labs that explores memory, scenario simulation, conversational reasoning, and decision intelligence for young adults navigating financial tradeoffs.",
