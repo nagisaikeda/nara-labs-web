@@ -24,6 +24,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.95,
     },
+    {
+      url: `${SITE_URL}/build-log`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
     ...PROJECTS.map((project) => ({
       url: `${SITE_URL}/projects/${project.slug}`,
       lastModified,

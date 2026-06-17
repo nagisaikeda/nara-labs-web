@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 const navLinks = [
   { href: "/#vision", label: "Research" },
   { href: "/projects", label: "Projects" },
+  { href: "/build-log", label: "Build Log" },
   { href: "/agents", label: "Hackathons" },
   { href: "/team", label: "Team" },
 ] as const;
@@ -70,6 +71,13 @@ export function Navigation() {
               aria-current={isActive("/projects") ? "page" : undefined}
             >
               Projects
+            </Link>
+            <Link
+              href="/build-log"
+              className={navLinkClass(isActive("/build-log"))}
+              aria-current={isActive("/build-log") ? "page" : undefined}
+            >
+              Build Log
             </Link>
             <Link
               href="/agents"
