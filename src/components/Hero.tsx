@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export function Hero() {
@@ -55,18 +56,18 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 1.1, ease: "easeOut" }}
           className="flex items-center justify-center gap-4"
         >
-          <a
-            href="https://ahead.nara-labs.com"
+          <Link
+            href="/projects"
             className="px-6 py-3 rounded-full bg-foreground text-background text-[14px] font-medium hover:opacity-90 transition-opacity duration-300"
           >
-            Explore Ahead
-          </a>
-          <a
-            href="#vision"
+            Explore projects
+          </Link>
+          <Link
+            href="/build-log"
             className="px-6 py-3 rounded-full border border-border-strong text-[14px] text-muted hover:text-foreground hover:border-foreground/20 transition-all duration-300"
           >
-            Our research
-          </a>
+            View build log
+          </Link>
         </motion.div>
 
         <motion.div

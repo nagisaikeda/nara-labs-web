@@ -6,9 +6,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
-  { href: "/#vision", label: "Research" },
   { href: "/projects", label: "Projects" },
   { href: "/build-log", label: "Build Log" },
+  { href: "/#capabilities", label: "Capabilities" },
   { href: "/agents", label: "Hackathons" },
   { href: "/team", label: "Team" },
 ] as const;
@@ -78,6 +78,12 @@ export function Navigation() {
               aria-current={isActive("/build-log") ? "page" : undefined}
             >
               Build Log
+            </Link>
+            <Link
+              href="/#capabilities"
+              className={navLinkClass(false)}
+            >
+              Capabilities
             </Link>
             <Link
               href="/agents"

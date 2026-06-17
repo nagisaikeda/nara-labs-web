@@ -3,9 +3,9 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-export function HomeProjectsTeaser() {
+export function HomeTeamPreview() {
   return (
-    <section id="projects" className="relative py-32 md:py-40 px-6 border-t border-border">
+    <section id="team" className="relative py-32 md:py-48 px-6 border-t border-border">
       <div className="max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -13,21 +13,18 @@ export function HomeProjectsTeaser() {
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <p className="text-[12px] font-semibold tracking-[0.2em] uppercase text-muted-soft mb-6">
-            Projects
-          </p>
-          <h2 className="font-serif text-[clamp(1.75rem,3.5vw,2.5rem)] font-normal leading-[1.1] tracking-[-0.02em] text-foreground mb-4">
-            Production-grade AI systems
+          <h2 className="font-serif text-[clamp(2rem,4vw,3rem)] font-normal leading-[1.1] tracking-[-0.02em] text-foreground mb-4">
+            Team
           </h2>
           <p className="text-[16px] leading-relaxed text-muted mb-8 max-w-xl">
-            Case studies documenting problem framing, architecture, and execution
-            across our flagship builds.
+            Small applied AI team building across product, engineering, machine
+            learning, and research.
           </p>
           <Link
-            href="/projects"
+            href="/team"
             className="inline-flex items-center text-[14px] text-muted hover:text-foreground transition-colors duration-300"
           >
-            View projects →
+            Meet the team →
           </Link>
         </motion.div>
       </div>

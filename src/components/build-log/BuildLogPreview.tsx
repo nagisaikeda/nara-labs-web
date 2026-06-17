@@ -6,7 +6,7 @@ import { BuildLogTimeline } from "@/components/build-log/BuildLogTimeline";
 import { getBuildLogEntries } from "@/data/build-log";
 
 export function BuildLogPreview() {
-  const entries = getBuildLogEntries(4);
+  const entries = getBuildLogEntries(5);
 
   return (
     <section id="build-log" className="relative py-32 md:py-48 px-6 border-t border-border">

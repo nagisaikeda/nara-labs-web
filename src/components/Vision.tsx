@@ -22,7 +22,7 @@ const principles = [
 
 export function Vision() {
   return (
-    <section id="vision" className="relative py-32 md:py-48 px-6">
+    <section id="vision" className="relative pt-32 md:pt-40 pb-32 md:pb-48 px-6">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

@@ -2,13 +2,11 @@
 
 import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
-import { Vision } from "@/components/Vision";
-import { AheadProduct } from "@/components/AheadProduct";
-import { ReasoningCard } from "@/components/ReasoningCard";
-import { DecisionSimulation } from "@/components/DecisionSimulation";
-import { HomeProjectsTeaser } from "@/components/HomeProjectsTeaser";
+import { WhatWereBuilding } from "@/components/WhatWereBuilding";
 import { BuildLogPreview } from "@/components/build-log/BuildLogPreview";
-import { HomeHackathonsTeaser } from "@/components/HomeHackathonsTeaser";
+import { CapabilityGrid } from "@/components/capabilities/CapabilityGrid";
+import { HomeHackathons } from "@/components/HomeHackathons";
+import { HomeTeamPreview } from "@/components/HomeTeamPreview";
 import { Footer } from "@/components/Footer";
 import { GradientBackground } from "@/components/GradientBackground";
 
@@ -18,13 +16,11 @@ export default function Home() {
       <GradientBackground />
       <Navigation />
       <Hero />
-      <Vision />
-      <AheadProduct />
-      <ReasoningCard />
-      <DecisionSimulation />
-      <HomeProjectsTeaser />
+      <WhatWereBuilding />
       <BuildLogPreview />
-      <HomeHackathonsTeaser />
+      <CapabilityGrid />
+      <HomeHackathons />
+      <HomeTeamPreview />
       <Footer />
     </main>
   );
