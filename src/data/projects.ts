@@ -35,8 +35,8 @@ export const PROJECTS: ProjectCaseStudy[] = [
       },
     ],
     team: [
-      { name: "Nagisa Ikeda", role: "Product Management, AI Design Engineering" },
       { name: "Eddy", role: "AI / Machine Learning Engineering" },
+      { name: "Nagisa Ikeda", role: "Product Management, AI Design Engineering" },
       { name: "Jiawen Zhang", role: "AI Engineering, Implementation" },
     ],
     techStack: [
@@ -93,9 +93,9 @@ export const PROJECTS: ProjectCaseStudy[] = [
       },
     ],
     team: [
-      { name: "Nagisa Ikeda", role: "Product Management, AI Design Engineering" },
-      { name: "Amogh Biju", role: "AI/ML Engineering" },
       { name: "Shivoham Angal", role: "AI/ML Engineering" },
+      { name: "Amogh Biju", role: "AI/ML Engineering" },
+      { name: "Nagisa Ikeda", role: "Product Management, AI Design Engineering" },
       { name: "Jiawen Zhang", role: "AI Engineering, Implementation" },
     ],
     techStack: ["Moss", "MiniMax", "Deepgram", "LiveKit", "Qwen"],
