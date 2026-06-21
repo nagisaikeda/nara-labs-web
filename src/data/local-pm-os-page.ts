@@ -74,6 +74,7 @@ export const LOCAL_PM_OS_PAGE = {
     ],
   },
   demo: {
+    videoId: "deE54ieqOsI",
     paragraphs: [
       "In our prototype, LocalPMOS analyzes project context and identifies a launch-critical decision.",
       "For example:",

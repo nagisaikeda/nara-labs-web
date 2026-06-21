@@ -49,6 +49,7 @@ export const PROJECTS: ProjectCaseStudy[] = [
       "Vector Database",
       "Multi-agent orchestration",
     ],
+    demoVideo: "https://youtu.be/deE54ieqOsI",
     lessonsLearned:
       "Technical execution is necessary but not sufficient. The strongest AI products need clear problem framing, expensive pain points, business value, and a compelling story before technical execution can fully matter.",
     previewImage: "/agents/local-pm-os/3.png",

@@ -40,6 +40,20 @@ function BulletList({ items }: { items: string[] }) {
   );
 }
 
+function YouTubeEmbed({ videoId, title }: { videoId: string; title: string }) {
+  return (
+    <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-border bg-surface-elevated">
+      <iframe
+        src={`https://www.youtube.com/embed/${videoId}`}
+        title={title}
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+        className="absolute inset-0 w-full h-full"
+      />
+    </div>
+  );
+}
+
 function FlowDiagram({ steps }: { steps: string[] }) {
   return (
     <pre className="mt-4 text-[13px] leading-relaxed text-muted font-mono whitespace-pre-wrap rounded-xl border border-border bg-background/40 p-5 overflow-x-auto">
@@ -154,7 +168,16 @@ export function LocalPMOSCaseStudy() {
             </ProjectSection>
 
             <ProjectSection title="Demo">
-              <Paragraphs items={[content.demo.paragraphs[0], content.demo.paragraphs[1]]} />
+              <Paragraphs items={[content.demo.paragraphs[0]]} />
+
+              <div className="my-8">
+                <YouTubeEmbed
+                  videoId={content.demo.videoId}
+                  title="LocalPMOS Demo"
+                />
+              </div>
+
+              <Paragraphs items={[content.demo.paragraphs[1]]} />
               <ExampleBlock text={content.demo.paragraphs[2]} />
               <div className="mt-4 space-y-4">
                 <p className="text-[15px] leading-relaxed text-muted">
