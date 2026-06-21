@@ -4,12 +4,12 @@ export const PROJECTS: ProjectCaseStudy[] = [
   {
     slug: "local-pm-os",
     name: "Local PM OS",
-    label: "AI Chief of Staff for Product Teams",
+    label: "The Company Brain for Autonomous Software Teams",
     origin: "Built at Dell × NVIDIA Local AI Hackathon",
     summary:
-      "A local-first AI Chief of Staff that analyzes Jira, GitHub, email, calendar, tasks, and notes to detect launch risks and recommend next actions — entirely on-device.",
+      "An AI-native operating system that captures company context, identifies risks, prioritizes work, and converts decisions into executable actions.",
     overview:
-      "Local PM OS is a local-first AI Chief of Staff for product teams. It analyzes fragmented organizational knowledge across Jira, GitHub, email, calendar, tasks, and internal notes to identify launch risks, surface blockers, and recommend next actions.",
+      "LocalPMOS is an AI-native operating system that continuously captures company context, identifies risks and opportunities, prioritizes work, and converts decisions into executable actions.",
     problem:
       "Product managers spend hours each week manually gathering context across disconnected tools. Critical launch risks are often discovered too late because information is fragmented across Jira tickets, GitHub pull requests, emails, meetings, and task systems.",
     solution:
@@ -54,18 +54,18 @@ export const PROJECTS: ProjectCaseStudy[] = [
     previewImage: "/agents/local-pm-os/3.png",
     badge: "Featured",
     seoDescription:
-      "Local PM OS is a local-first AI Chief of Staff for product teams, built by Team Nara Lab at the Dell × NVIDIA Local AI Hackathon. The system uses local AI, RAG, tool calling, and product intelligence to detect launch risks across Jira, GitHub, email, calendar, tasks, and notes.",
+      "LocalPMOS is an AI-native operating system that captures company context, identifies risks, prioritizes work, and converts decisions into action. Built at the Dell × NVIDIA Local AI Hackathon by Nara Labs.",
     featured: true,
   },
   {
     slug: "probeiq",
     name: "ProbeIQ",
-    label: "Real-Time Voice Learning Agent",
+    label: "Turn Every Educational Resource Into an AI Tutor",
     origin: "Built at YC × Moss Conversational AI Hackathon",
     summary:
-      "A real-time voice tutoring system that transforms procedural videos into interactive learning experiences with context-aware answers grounded in the source material.",
+      "ProbeIQ transforms educational videos into interactive AI tutors with grounded answers, voice interaction, and real-time guidance based on source material.",
     overview:
-      "ProbeIQ is a real-time voice tutoring system that transforms procedural videos into interactive learning experiences. Users can ask questions naturally while watching educational content and receive context-aware answers grounded in the video content.",
+      "ProbeIQ transforms educational videos into interactive AI tutors. Learners can ask questions naturally while watching content and receive grounded answers, explanations, and guidance based on the source material in real time.",
     problem:
       "Procedural learning videos are often passive and difficult to navigate. Learners must scrub manually, search for context, and interpret complex steps without interactive guidance.",
     solution:
@@ -99,12 +99,13 @@ export const PROJECTS: ProjectCaseStudy[] = [
       { name: "Jiawen Zhang", role: "AI Engineering, Implementation" },
     ],
     techStack: ["Moss", "MiniMax", "Deepgram", "LiveKit", "Qwen"],
+    demoVideo: "https://www.youtube.com/watch?v=a4XDWGnEkhg",
     lessonsLearned:
       "In voice AI, retrieval latency is not just a backend metric. It directly affects whether an agent feels grounded, responsive, and trustworthy. The most interesting challenge was orchestrating retrieval, context, voice, and interaction timing into a seamless experience.",
     previewImage: "/agents/probeiq/1.png",
     badge: "Voice AI",
     seoDescription:
-      "ProbeIQ is a real-time voice learning agent built by Team Nara Lab at the YC × Moss Conversational AI Hackathon. The system combines transcription, RAG, voice AI, retrieval, and video playback control to transform procedural videos into interactive learning experiences.",
+      "ProbeIQ transforms educational videos into interactive AI tutors with transcription, retrieval, voice interaction, and grounded reasoning. Built at the YC × Moss Conversational AI Hackathon by Nara Labs.",
   },
   {
     slug: "ahead",
