@@ -2,6 +2,14 @@ import type { BuildLogEntry } from "@/types/build-log";
 
 export const BUILD_LOG_ENTRIES: BuildLogEntry[] = [
   {
+    id: "yc-ai-growth-hackathon",
+    date: "June 2026",
+    title: "Won 2nd Place — YC AI Growth Hackathon",
+    description:
+      "Built ReadyLead, an AI-native growth intelligence system that identifies high-intent customer signals and helps teams prioritize outreach.",
+    sortOrder: 8,
+  },
+  {
     id: "local-pm-os",
     date: "June 2026",
     title: "Built Local PM OS",

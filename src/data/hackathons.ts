@@ -2,6 +2,22 @@ import type { HackathonEntry } from "@/types/hackathon";
 
 export const HACKATHON_ENTRIES: HackathonEntry[] = [
   {
+    id: "yc-ai-growth",
+    name: "YC AI Growth Hackathon",
+    placement: "2nd Place",
+    product: "ReadyLead",
+    description:
+      "Built an AI growth intelligence system for identifying high-intent customer signals and converting them into prioritized outreach workflows.",
+    explored:
+      "ReadyLead, an AI-native growth intelligence system for high-intent customer signals and pipeline prioritization.",
+    keywords: [
+      "Growth AI",
+      "Lead Intelligence",
+      "YC AI Growth Hackathon",
+      "Next.js",
+    ],
+  },
+  {
     id: "yc-voice-ai",
     name: "YC Voice AI Hackathon",
     description:

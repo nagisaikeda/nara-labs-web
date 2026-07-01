@@ -35,9 +35,21 @@ export function HomeHackathons() {
               transition={{ duration: 0.6, delay: index * 0.06, ease: "easeOut" }}
               className="py-8 border-b border-border last:border-b-0"
             >
-              <h3 className="text-[15px] font-medium text-foreground mb-2">
-                {entry.name}
-              </h3>
+              <div className="flex flex-wrap items-center gap-2 mb-2">
+                <h3 className="text-[15px] font-medium text-foreground">
+                  {entry.name}
+                </h3>
+                {entry.placement && (
+                  <span className="px-2.5 py-0.5 rounded-full border border-border-strong bg-foreground/[0.06] text-[11px] font-semibold tracking-[0.08em] uppercase text-muted">
+                    {entry.placement}
+                  </span>
+                )}
+              </div>
+              {entry.product && (
+                <p className="text-[14px] font-medium text-foreground/90 mb-2">
+                  {entry.product}
+                </p>
+              )}
               <p className="text-[14px] leading-relaxed text-muted mb-2">
                 {entry.description}
               </p>

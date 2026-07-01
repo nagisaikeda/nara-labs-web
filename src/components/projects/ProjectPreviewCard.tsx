@@ -13,7 +13,7 @@ type ProjectPreviewCardProps = {
 };
 
 export function ProjectPreviewCard({ project, index }: ProjectPreviewCardProps) {
-  const previewStack = getPreviewTechStack(project);
+  const previewStack = getPreviewTechStack(project, 4);
 
   return (
     <motion.article
@@ -21,21 +21,22 @@ export function ProjectPreviewCard({ project, index }: ProjectPreviewCardProps) 
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.7, delay: index * 0.08, ease: "easeOut" }}
-      className={`group relative rounded-2xl border overflow-hidden transition-colors duration-500 ${
+      className={`group relative rounded-2xl border transition-colors duration-500 ${
         project.featured
           ? "border-border-strong bg-gradient-to-b from-surface-elevated/80 to-surface/30 hover:border-foreground/15"
           : "border-border bg-surface/20 hover:border-border-strong"
       }`}
     >
-      <div className="grid md:grid-cols-[1.1fr_1fr] gap-0">
+      <div className="grid grid-cols-1 md:grid-cols-[58fr_42fr] gap-0 items-stretch">
         {project.previewImage && (
-          <div className="relative aspect-[16/10] md:aspect-auto md:min-h-[280px] border-b md:border-b-0 md:border-r border-border overflow-hidden bg-surface-elevated">
+          <div className="flex items-center justify-center bg-[#111] p-6 md:p-8 min-h-[280px] md:min-h-[360px] border-b md:border-b-0 md:border-r border-border">
             <Image
               src={project.previewImage}
               alt={`${project.name} preview`}
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+              width={1600}
+              height={1000}
+              sizes="(max-width: 768px) 100vw, 58vw"
+              className="w-full h-auto max-w-full object-contain"
             />
           </div>
         )}

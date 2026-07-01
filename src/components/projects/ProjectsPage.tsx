@@ -14,7 +14,7 @@ export function ProjectsPage() {
       <Navigation />
       <PageHero
         title="Projects"
-        subtitle="Production-grade AI systems built by Team Nara Lab"
+        subtitle="Applied AI products, research prototypes, and award-winning systems built by Nara Labs."
         supportingText="A portfolio of applied AI systems, agentic workflows, and decision-support products."
       />
 

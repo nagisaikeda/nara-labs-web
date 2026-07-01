@@ -10,6 +10,45 @@ import type { AgentCardData } from "@/types/agent";
 
 const agents: AgentCardData[] = [
   {
+    name: "Local PM OS",
+    label: "Dell × NVIDIA Local AI Hackathon",
+    description:
+      "Local PM OS is an AI Chief of Staff designed to help product teams navigate fragmented organizational knowledge. Running entirely on Dell Pro Max with NVIDIA GB10, the system analyzes Jira tickets, GitHub activity, emails, calendars, tasks, and internal notes to identify launch risks, surface blockers, and recommend next actions.",
+    descriptionExtra:
+      "The system acts as an always-on product intelligence layer that reasons across product, engineering, and business signals to generate PM briefings and stakeholder-ready updates.",
+    capabilities: [
+      "Cross-system project intelligence",
+      "Launch risk detection",
+      "Blocker identification",
+      "PM briefings and stakeholder updates",
+      "Enterprise privacy through local execution",
+    ],
+    techStack: [
+      "Dell Pro Max with NVIDIA GB10",
+      "NVIDIA NIM",
+      "Next.js",
+      "React",
+      "Python",
+      "Local RAG",
+      "Vector Database",
+      "Multi-agent orchestration",
+    ],
+    gallery: [
+      {
+        src: "/agents/local-pm-os/1.png",
+        alt: "Team members building Local PM OS during the Dell × NVIDIA hackathon",
+      },
+      {
+        src: "/agents/local-pm-os/2.png",
+        alt: "Local PM OS demo day presentation at BuilderBase AI Factory",
+      },
+      {
+        src: "/agents/local-pm-os/3.png",
+        alt: "Local PM OS dashboard showing launch risk analysis and recommended actions",
+      },
+    ],
+  },
+  {
     name: "ProbeIQ",
     label: "YC × Moss Conversational AI Hackathon",
     description:

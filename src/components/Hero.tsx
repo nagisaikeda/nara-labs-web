@@ -71,6 +71,28 @@ export function Hero() {
         </motion.div>
 
         <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.4, ease: "easeOut" }}
+          className="mt-10 max-w-lg mx-auto rounded-xl border border-border bg-surface/20 px-5 py-4 md:px-6"
+        >
+          <p className="text-[11px] font-semibold tracking-[0.15em] uppercase text-muted-soft mb-2">
+            Recognition
+          </p>
+          <p className="text-[14px] font-medium text-foreground mb-2">
+            🏆 2nd Place · YC AI Growth Hackathon 2026
+          </p>
+          <p className="text-[12px] text-muted-soft mb-1.5">Built at</p>
+          <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-[13px] leading-relaxed text-muted">
+            <span>YC AI Growth Hackathon</span>
+            <span className="text-muted-soft" aria-hidden="true">
+              ·
+            </span>
+            <span>Dell × NVIDIA Local AI Hackathon</span>
+          </div>
+        </motion.div>
+
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 2, delay: 1.8 }}

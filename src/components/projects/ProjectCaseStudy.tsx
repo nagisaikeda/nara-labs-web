@@ -7,6 +7,10 @@ import { ProjectSection } from "@/components/projects/ProjectSection";
 import { TechStackPills } from "@/components/projects/TechStackPills";
 import { TeamList } from "@/components/projects/TeamList";
 import { ProjectLinks } from "@/components/projects/ProjectLinks";
+import {
+  YouTubeEmbed,
+  parseYouTubeUrl,
+} from "@/components/projects/YouTubeEmbed";
 import { GradientBackground } from "@/components/GradientBackground";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -17,6 +21,8 @@ type ProjectCaseStudyProps = {
 };
 
 export function ProjectCaseStudyView({ project }: ProjectCaseStudyProps) {
+  const youtube = project.demoVideo ? parseYouTubeUrl(project.demoVideo) : null;
+
   return (
     <main className="relative overflow-hidden">
       <GradientBackground />
@@ -90,6 +96,16 @@ export function ProjectCaseStudyView({ project }: ProjectCaseStudyProps) {
                 {project.architecture}
               </pre>
             </ProjectSection>
+
+            {youtube && (
+              <ProjectSection title="Demo">
+                <YouTubeEmbed
+                  videoId={youtube.videoId}
+                  startSeconds={youtube.startSeconds}
+                  title={`${project.name} demo`}
+                />
+              </ProjectSection>
+            )}
 
             {project.gallery && project.gallery.length > 0 && (
               <ProjectSection title="Screenshots">

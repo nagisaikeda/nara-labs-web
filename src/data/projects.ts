@@ -2,6 +2,44 @@ import type { ProjectCaseStudy } from "@/types/project";
 
 export const PROJECTS: ProjectCaseStudy[] = [
   {
+    slug: "readylead",
+    name: "ReadyLead",
+    label: "AI Growth Intelligence for High-Intent Customer Signals",
+    origin: "2nd Place · YC AI Growth Hackathon",
+    summary:
+      "An AI-native growth system that identifies buying signals, prioritizes leads, and helps teams convert customer intent into pipeline.",
+    overview:
+      "ReadyLead is an AI-native growth intelligence system that identifies high-intent customer signals, prioritizes leads, and helps teams convert customer intent into pipeline.",
+    problem:
+      "Growth teams struggle to identify which prospects are showing real buying intent across fragmented signals in product usage, content engagement, and customer conversations.",
+    solution:
+      "ReadyLead analyzes customer signals, scores intent, and surfaces prioritized outreach recommendations so teams can focus on the leads most likely to convert.",
+    architecture: `Customer signals
+→ Intent scoring
+→ Lead prioritization
+→ Outreach recommendations
+→ Pipeline conversion workflows`,
+    team: [
+      { name: "Devon Lin", role: "Product, AI Engineering" },
+      { name: "Nagisa Ikeda", role: "Product Management, AI Design Engineering" },
+      { name: "Jiawen Zhang", role: "AI Engineering" },
+    ],
+    techStack: [
+      "YC AI Growth Hackathon",
+      "Growth AI",
+      "Lead Intelligence",
+      "Next.js",
+    ],
+    lessonsLearned:
+      "The strongest growth AI products connect signal detection to actionable workflow, not just dashboards or scores.",
+    demoVideo: "https://www.youtube.com/watch?v=GSe8ArMNCjc&t=1s",
+    previewImage: "/agents/readylead/preview.png",
+    badge: "2nd Place · YC AI Growth Hackathon",
+    seoDescription:
+      "ReadyLead is an AI-native growth intelligence system that identifies high-intent customer signals and helps teams prioritize outreach. 2nd Place at the YC AI Growth Hackathon by Nara Labs.",
+    featured: true,
+  },
+  {
     slug: "local-pm-os",
     name: "Local PM OS",
     label: "The Company Brain for Autonomous Software Teams",
@@ -53,10 +91,10 @@ export const PROJECTS: ProjectCaseStudy[] = [
     lessonsLearned:
       "Technical execution is necessary but not sufficient. The strongest AI products need clear problem framing, expensive pain points, business value, and a compelling story before technical execution can fully matter.",
     previewImage: "/agents/local-pm-os/3.png",
-    badge: "Featured",
+    badge: "Local AI",
     seoDescription:
       "LocalPMOS is an AI-native operating system that captures company context, identifies risks, prioritizes work, and converts decisions into action. Built at the Dell × NVIDIA Local AI Hackathon by Nara Labs.",
-    featured: true,
+    featured: false,
   },
   {
     slug: "probeiq",
