@@ -366,4 +366,4 @@ export const PROJECT_EVIDENCE: ProjectEvidenceBlock[] = [
 ];
 
 export const CAPABILITIES_PAGE_INTRO =
-  "We build applied AI systems that combine product judgment with technical execution: agent workflows, memory, retrieval, realtime interfaces, evaluation loops, and AI-native product experiences.";
+  "These are the technical foundations behind products like ReadyLead and ProbeIQ — for technical buyers, investors, recruiters, and engineering teams evaluating how we build applied AI systems.";

@@ -3,20 +3,20 @@ import { CapabilitiesPage } from "@/components/capabilities/CapabilitiesPage";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Technical Capabilities | Nara Labs",
+  title: "Capabilities | Nara Labs",
   description:
-    "A map of the systems, workflows, and technical surfaces Nara Labs builds across agentic systems, retrieval, realtime voice, reasoning, local AI, and design engineering.",
+    "The reusable AI systems, design engineering philosophy, and platform capabilities behind Nara Labs products — agentic systems, retrieval, voice, reasoning, local AI, and design engineering.",
   path: "/capabilities",
   keywords: [
     "Nara Labs",
-    "AI Engineering",
+    "AI Capabilities",
     "Applied AI",
     "Agentic Systems",
     "RAG",
     "Realtime Voice",
     "Local AI",
     "Design Engineering",
-    "AI Product Studio",
+    "Platform Capabilities",
   ],
 });
 

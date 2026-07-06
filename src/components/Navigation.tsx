@@ -1,33 +1,27 @@
 "use client";
 
-import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 const navLinks = [
-  { href: "/projects", label: "Projects" },
-  { href: "/build-log", label: "Build Log" },
+  { href: "/products", label: "Products" },
   { href: "/capabilities", label: "Capabilities" },
-  { href: "/agents", label: "Hackathons" },
-  { href: "/team", label: "Team" },
+  { href: "/company", label: "Company" },
+  { href: "/updates", label: "Updates" },
 ] as const;
 
 function navLinkClass(isActive: boolean) {
   return `text-[14px] transition-colors duration-300 ${
-    isActive
-      ? "text-foreground"
-      : "text-muted hover:text-foreground"
+    isActive ? "text-foreground" : "text-muted hover:text-foreground"
   }`;
 }
 
 export function Navigation() {
   const pathname = usePathname();
 
-  const isActive = (href: string) => {
-    if (href.startsWith("/#")) return false;
-    return pathname === href;
-  };
+  const isActive = (href: string) => pathname === href;
 
   return (
     <motion.nav
@@ -50,7 +44,7 @@ export function Navigation() {
           </span>
         </Link>
 
-        <div className="hidden lg:flex items-center gap-7">
+        <div className="hidden xl:flex items-center gap-7">
           {navLinks.map((link) => (
             <Link
               key={link.label}
@@ -64,55 +58,24 @@ export function Navigation() {
         </div>
 
         <div className="flex items-center gap-3 sm:gap-4 shrink-0">
-          <div className="flex lg:hidden items-center gap-3 sm:gap-4">
-            <Link
-              href="/projects"
-              className={navLinkClass(isActive("/projects"))}
-              aria-current={isActive("/projects") ? "page" : undefined}
-            >
-              Projects
-            </Link>
-            <Link
-              href="/build-log"
-              className={navLinkClass(isActive("/build-log"))}
-              aria-current={isActive("/build-log") ? "page" : undefined}
-            >
-              Build Log
-            </Link>
-            <Link
-              href="/capabilities"
-              className={navLinkClass(isActive("/capabilities"))}
-              aria-current={isActive("/capabilities") ? "page" : undefined}
-            >
-              Capabilities
-            </Link>
-            <Link
-              href="/agents"
-              className={navLinkClass(isActive("/agents"))}
-              aria-current={isActive("/agents") ? "page" : undefined}
-            >
-              Hackathons
-            </Link>
-            <Link
-              href="/team"
-              className={navLinkClass(isActive("/team"))}
-              aria-current={isActive("/team") ? "page" : undefined}
-            >
-              Team
-            </Link>
+          <div className="flex xl:hidden items-center gap-3 sm:gap-4 overflow-x-auto">
+            {navLinks.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className={`${navLinkClass(isActive(link.href))} whitespace-nowrap`}
+                aria-current={isActive(link.href) ? "page" : undefined}
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
-          <a
-            href="#"
-            className="hidden sm:block text-[14px] text-muted hover:text-foreground transition-colors duration-300"
+          <Link
+            href="/book-demo"
+            className="text-[13px] font-medium px-4 py-2 rounded-full bg-foreground/[0.08] border border-border-strong text-foreground hover:bg-foreground/[0.12] transition-all duration-300 whitespace-nowrap"
           >
-            Sign in
-          </a>
-          <a
-            href="#"
-            className="text-[13px] font-medium px-4 py-2 rounded-full bg-foreground/[0.08] border border-border-strong text-foreground hover:bg-foreground/[0.12] transition-all duration-300"
-          >
-            Request access
-          </a>
+            Book Demo
+          </Link>
         </div>
       </div>
     </motion.nav>

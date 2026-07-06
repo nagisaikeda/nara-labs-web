@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -28,35 +29,9 @@ export function Footer() {
                 </span>
               </div>
               <p className="text-[14px] leading-relaxed text-muted max-w-xs">
-                Frontier AI systems for realtime reasoning, contextual memory,
-                and human-centered decision intelligence.
+                Applied AI Lab building configurable products for specialized
+                industries. ReadyLead is our flagship commercial product.
               </p>
-            </div>
-
-            <div>
-              <p className="text-[12px] font-semibold tracking-[0.15em] uppercase text-muted-soft mb-4">
-                Research
-              </p>
-              <div className="space-y-3">
-                <a
-                  href="#"
-                  className="block text-[14px] text-muted hover:text-foreground transition-colors duration-300"
-                >
-                  Reasoning Systems
-                </a>
-                <a
-                  href="#"
-                  className="block text-[14px] text-muted hover:text-foreground transition-colors duration-300"
-                >
-                  Behavioral Models
-                </a>
-                <a
-                  href="#"
-                  className="block text-[14px] text-muted hover:text-foreground transition-colors duration-300"
-                >
-                  Adaptive Interfaces
-                </a>
-              </div>
             </div>
 
             <div>
@@ -64,24 +39,27 @@ export function Footer() {
                 Products
               </p>
               <div className="space-y-3">
-                <a
-                  href="https://ahead.nara-labs.com"
+                <Link
+                  href="/projects/readylead"
                   className="block text-[14px] text-muted hover:text-foreground transition-colors duration-300"
                 >
-                  Ahead
-                </a>
-                <a
-                  href="#"
+                  ReadyLead
+                </Link>
+                <p className="text-[12px] text-muted-soft pl-0">
+                  2nd Place · YC AI Growth Hackathon
+                </p>
+                <Link
+                  href="/projects/probeiq"
                   className="block text-[14px] text-muted hover:text-foreground transition-colors duration-300"
                 >
-                  Documentation
-                </a>
-                <a
-                  href="#"
+                  ProbeIQ
+                </Link>
+                <Link
+                  href="/products"
                   className="block text-[14px] text-muted hover:text-foreground transition-colors duration-300"
                 >
-                  API
-                </a>
+                  All products
+                </Link>
               </div>
             </div>
 
@@ -90,37 +68,57 @@ export function Footer() {
                 Company
               </p>
               <div className="space-y-3">
-                <a
-                  href="/team"
+                <Link
+                  href="/company"
+                  className="block text-[14px] text-muted hover:text-foreground transition-colors duration-300"
+                >
+                  About
+                </Link>
+                <Link
+                  href="/company#team"
                   className="block text-[14px] text-muted hover:text-foreground transition-colors duration-300"
                 >
                   Team
-                </a>
-                <a
-                  href="/projects"
+                </Link>
+                <Link
+                  href="/capabilities"
                   className="block text-[14px] text-muted hover:text-foreground transition-colors duration-300"
                 >
-                  Projects
-                </a>
-                <a
-                  href="/agents"
+                  Capabilities
+                </Link>
+                <Link
+                  href="/updates"
                   className="block text-[14px] text-muted hover:text-foreground transition-colors duration-300"
                 >
-                  Hackathons
-                </a>
-                <a
-                  href="#"
+                  Updates
+                </Link>
+              </div>
+            </div>
+
+            <div>
+              <p className="text-[12px] font-semibold tracking-[0.15em] uppercase text-muted-soft mb-4">
+                Get started
+              </p>
+              <div className="space-y-3">
+                <Link
+                  href="/book-demo"
                   className="block text-[14px] text-muted hover:text-foreground transition-colors duration-300"
                 >
-                  Contact
-                </a>
+                  Book a demo
+                </Link>
+                <Link
+                  href="/book-demo?partner=1"
+                  className="block text-[14px] text-muted hover:text-foreground transition-colors duration-300"
+                >
+                  Design partners
+                </Link>
               </div>
             </div>
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-border">
             <p className="text-[13px] text-muted-soft">
-              © 2025 Nara Labs. All rights reserved.
+              © 2026 Nara Labs. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
               <a

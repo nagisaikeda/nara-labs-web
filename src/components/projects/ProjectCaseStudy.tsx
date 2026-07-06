@@ -36,10 +36,10 @@ export function ProjectCaseStudyView({ project }: ProjectCaseStudyProps) {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <Link
-              href="/projects"
+              href="/products"
               className="inline-flex items-center text-[13px] text-muted-soft hover:text-foreground transition-colors duration-300 mb-8"
             >
-              ← Back to Projects
+              ← Back to products
             </Link>
 
             <div className="flex flex-wrap items-center gap-3 mb-5">
@@ -66,6 +66,12 @@ export function ProjectCaseStudyView({ project }: ProjectCaseStudyProps) {
               demoVideo={project.demoVideo}
               githubRepo={project.githubRepo}
             />
+            <Link
+              href="/book-demo"
+              className="inline-flex items-center mt-4 px-5 py-2.5 rounded-full border border-border-strong text-[14px] text-muted hover:text-foreground transition-colors duration-300"
+            >
+              Book a demo
+            </Link>
           </motion.div>
         </div>
       </section>
@@ -137,10 +143,10 @@ export function ProjectCaseStudyView({ project }: ProjectCaseStudyProps) {
 
           <div className="mt-12 text-center">
             <Link
-              href="/projects"
+              href="/products"
               className="inline-flex items-center px-6 py-3 rounded-full border border-border-strong text-[14px] text-muted hover:text-foreground hover:border-foreground/20 transition-all duration-300"
             >
-              ← Back to Projects
+              ← Back to products
             </Link>
           </div>
         </div>

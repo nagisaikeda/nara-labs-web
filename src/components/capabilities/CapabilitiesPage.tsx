@@ -17,8 +17,8 @@ export function CapabilitiesPage() {
       <GradientBackground />
       <Navigation />
       <PageHero
-        title="Technical Capabilities"
-        subtitle="A map of the systems, workflows, and technical surfaces we are building across Nara Labs projects."
+        title="Capabilities"
+        subtitle="The reusable AI systems, design engineering philosophy, and platform capabilities behind Nara Labs products."
         supportingText={CAPABILITIES_PAGE_INTRO}
       />
       <CapabilityAreasSection />

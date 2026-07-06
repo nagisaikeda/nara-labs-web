@@ -16,11 +16,12 @@ export function CapabilityAreasSection() {
           className="max-w-2xl mb-12"
         >
           <h2 className="font-serif text-[clamp(1.75rem,3.5vw,2.25rem)] font-normal leading-[1.1] tracking-[-0.02em] text-foreground mb-3">
-            Capability Areas
+            AI Systems & Platform Capabilities
           </h2>
           <p className="text-[15px] leading-relaxed text-muted">
-            Technical surfaces where we have shipped, experimented, or built
-            working prototypes.
+            Reusable technical surfaces that power Nara Labs products — from
+            agent workflows and retrieval to realtime interfaces and design
+            engineering.
           </p>
         </motion.div>
 
