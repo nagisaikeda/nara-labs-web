@@ -16,17 +16,25 @@
   --background: #08080a;
   --foreground: #f0f0f2;
   --muted: #8a8a9a;
-  --muted-soft: #7a7a8a;
+  --muted-soft: #828294;
   --surface: #111114;
   --surface-elevated: #18181c;
   --surface-glass: rgba(255, 255, 255, 0.03);
-  --border: rgba(255, 255, 255, 0.06);
-  --border-strong: rgba(255, 255, 255, 0.1);
+  --border: rgba(255, 255, 255, 0.14);
+  --border-strong: rgba(255, 255, 255, 0.22);
   --gradient-mint: #a7e5d3;
   --gradient-lavender: #c8b8e0;
   --gradient-peach: #f4c5a8;
   --gradient-sky: #a8c8e8;
   --gradient-rose: #e8b8c4;
+  --gradient-text-accent-fallback: var(--gradient-lavender);
+  --focus-ring-color: rgba(200, 184, 224, 0.72);
+  --focus-ring-offset-color: var(--background);
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
+  --motion-duration-fast: 150ms;
+  --motion-duration-normal: 300ms;
+  --motion-duration-slow: 600ms;
 }
 
 @theme inline {
@@ -44,6 +52,7 @@
   --color-gradient-peach: var(--gradient-peach);
   --color-gradient-sky: var(--gradient-sky);
   --color-gradient-rose: var(--gradient-rose);
+  --color-focus-ring: var(--focus-ring-color);
   --font-sans: var(--font-inter);
   --font-serif: var(--font-eb-garamond);
 }
@@ -52,6 +61,32 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+[role="button"]:focus-visible,
+[tabindex]:not([tabindex="-1"]):focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: 0;
+  border-color: var(--border-strong);
 }
 
 .glass {
@@ -151,17 +186,56 @@ body {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, var(--foreground) 0%, var(--muted) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--foreground);
 }
 
 .text-gradient-accent {
-  background: linear-gradient(135deg, var(--gradient-lavender) 0%, var(--gradient-sky) 50%, var(--gradient-mint) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--gradient-text-accent-fallback);
+}
+
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .text-gradient {
+    background: linear-gradient(135deg, var(--foreground) 0%, var(--muted) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-accent {
+    background: linear-gradient(
+      135deg,
+      var(--gradient-lavender) 0%,
+      var(--gradient-sky) 50%,
+      var(--gradient-mint) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .animate-gradient-drift,
+  .animate-gradient-drift-slow,
+  .animate-pulse-soft,
+  .animate-float,
+  .animate-shimmer {
+    animation: none !important;
+  }
 }
 
 ::selection {

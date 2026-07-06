@@ -33,7 +33,7 @@ export const PROJECTS: ProjectCaseStudy[] = [
     lessonsLearned:
       "The strongest growth AI products connect signal detection to actionable workflow, not just dashboards or scores.",
     demoVideo: "https://www.youtube.com/watch?v=GSe8ArMNCjc&t=1s",
-    previewImage: "/agents/readylead/preview.png",
+    previewImage: "/agents/readylead/hero.png",
     badge: "2nd Place · YC AI Growth Hackathon",
     seoDescription:
       "ReadyLead is an AI-native growth intelligence system that identifies high-intent customer signals and helps teams prioritize outreach. 2nd Place at the YC AI Growth Hackathon by Nara Labs.",

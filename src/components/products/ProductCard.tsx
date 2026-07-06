@@ -60,8 +60,10 @@ export function ProductCard({ product, variant = "standard" }: ProductCardProps)
     >
       {product.previewImage && (
         <div
-          className={`flex items-center justify-center bg-[#111] border-b border-border ${
-            isHero ? "p-8 md:p-10 min-h-[220px] md:min-h-[280px]" : "p-6 min-h-[180px]"
+          className={`flex items-center justify-center border-b border-border ${
+            isHero
+              ? "p-6 md:p-8 min-h-[220px] md:min-h-[280px] bg-[#f4f4f6]"
+              : "p-6 min-h-[180px] bg-[#111]"
           }`}
         >
           <Image
@@ -69,7 +71,9 @@ export function ProductCard({ product, variant = "standard" }: ProductCardProps)
             alt={`${product.name} preview`}
             width={800}
             height={500}
-            className="w-full h-auto max-w-full object-contain"
+            className={`w-full h-auto max-w-full ${
+              isHero ? "object-cover rounded-xl shadow-sm" : "object-contain"
+            }`}
           />
         </div>
       )}

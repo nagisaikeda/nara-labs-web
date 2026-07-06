@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { AgentGallery } from "@/components/AgentGallery";
@@ -75,6 +76,29 @@ export function ProjectCaseStudyView({ project }: ProjectCaseStudyProps) {
           </motion.div>
         </div>
       </section>
+
+      {project.previewImage && (
+        <section className="relative px-6 pb-12 md:pb-16">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+              className="rounded-2xl border border-border overflow-hidden bg-[#f4f4f6]"
+            >
+              <Image
+                src={project.previewImage}
+                alt={`${project.name} product preview`}
+                width={2048}
+                height={1402}
+                priority
+                sizes="(max-width: 768px) 100vw, 1152px"
+                className="w-full h-auto object-cover"
+              />
+            </motion.div>
+          </div>
+        </section>
+      )}
 
       <section className="relative pb-32 md:pb-48 px-6">
         <div className="max-w-4xl mx-auto">

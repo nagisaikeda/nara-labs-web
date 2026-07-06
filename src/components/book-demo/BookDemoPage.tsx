@@ -57,7 +57,7 @@ function BookDemoForm() {
                   name="name"
                   type="text"
                   required
-                  className="w-full px-4 py-3 rounded-xl border border-border bg-background/40 text-[14px] text-foreground placeholder:text-muted-soft focus:outline-none focus:border-border-strong transition-colors"
+                  className="w-full px-4 py-3 rounded-xl border border-border bg-background/40 text-[14px] text-foreground placeholder:text-muted-soft focus-visible:border-border-strong transition-colors"
                   placeholder="Your name"
                 />
               </div>
@@ -74,7 +74,7 @@ function BookDemoForm() {
                   name="email"
                   type="email"
                   required
-                  className="w-full px-4 py-3 rounded-xl border border-border bg-background/40 text-[14px] text-foreground placeholder:text-muted-soft focus:outline-none focus:border-border-strong transition-colors"
+                  className="w-full px-4 py-3 rounded-xl border border-border bg-background/40 text-[14px] text-foreground placeholder:text-muted-soft focus-visible:border-border-strong transition-colors"
                   placeholder="you@company.com"
                 />
               </div>
@@ -91,7 +91,7 @@ function BookDemoForm() {
                   name="company"
                   type="text"
                   required
-                  className="w-full px-4 py-3 rounded-xl border border-border bg-background/40 text-[14px] text-foreground placeholder:text-muted-soft focus:outline-none focus:border-border-strong transition-colors"
+                  className="w-full px-4 py-3 rounded-xl border border-border bg-background/40 text-[14px] text-foreground placeholder:text-muted-soft focus-visible:border-border-strong transition-colors"
                   placeholder="Company name"
                 />
               </div>
@@ -107,7 +107,7 @@ function BookDemoForm() {
                   id="interest"
                   name="interest"
                   defaultValue={isPartner ? "design-partner" : "readylead"}
-                  className="w-full px-4 py-3 rounded-xl border border-border bg-background/40 text-[14px] text-foreground focus:outline-none focus:border-border-strong transition-colors"
+                  className="w-full px-4 py-3 rounded-xl border border-border bg-background/40 text-[14px] text-foreground focus-visible:border-border-strong transition-colors"
                 >
                   <option value="readylead">ReadyLead (Flagship)</option>
                   <option value="probeiq">ProbeIQ</option>
@@ -128,7 +128,7 @@ function BookDemoForm() {
                   id="message"
                   name="message"
                   rows={4}
-                  className="w-full px-4 py-3 rounded-xl border border-border bg-background/40 text-[14px] text-foreground placeholder:text-muted-soft focus:outline-none focus:border-border-strong transition-colors resize-y min-h-[120px]"
+                  className="w-full px-4 py-3 rounded-xl border border-border bg-background/40 text-[14px] text-foreground placeholder:text-muted-soft focus-visible:border-border-strong transition-colors resize-y min-h-[120px]"
                   placeholder={
                     isPartner
                       ? "Describe the workflow you'd like us to explore together."

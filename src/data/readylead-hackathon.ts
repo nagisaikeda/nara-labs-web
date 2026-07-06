@@ -11,7 +11,7 @@ export const READYLEAD_HACKATHON = {
     "Built an AI growth intelligence system for identifying high-intent customer signals and converting them into prioritized outreach workflows.",
   descriptionExtra:
     "ReadyLead is an AI-native growth intelligence system that identifies high-intent customer signals, prioritizes leads, and helps teams convert customer intent into pipeline.",
-  heroImage: "/agents/readylead/preview.png",
+  heroImage: "/agents/readylead/hero.png",
   gallery: [
     {
       src: "/agents/readylead/team-win.png",

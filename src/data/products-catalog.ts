@@ -15,7 +15,7 @@ export const FLAGSHIP_PRODUCTS: CustomerProduct[] = [
     tier: "flagship",
     accolade: READYLEAD_ACCOLADE,
     href: "/projects/readylead",
-    previewImage: "/agents/readylead/preview.png",
+    previewImage: "/agents/readylead/hero.png",
   },
   {
     id: "probeiq",

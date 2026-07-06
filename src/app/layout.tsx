@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, EB_Garamond } from "next/font/google";
 import { JsonLd } from "@/components/JsonLd";
+import { MotionProvider } from "@/components/MotionProvider";
 import { getOrganizationStructuredData } from "@/lib/structured-data";
 import { createPageMetadata } from "@/lib/metadata";
 import "./globals.css";
@@ -47,7 +48,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${ebGaramond.variable}`}>
       <body className="min-h-screen bg-background text-foreground antialiased">
         <JsonLd data={getOrganizationStructuredData()} />
-        {children}
+        <MotionProvider>{children}</MotionProvider>
       </body>
     </html>
   );

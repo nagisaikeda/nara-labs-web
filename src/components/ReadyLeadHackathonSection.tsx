@@ -50,14 +50,14 @@ export function ReadyLeadHackathonSection() {
               </p>
             </div>
 
-            <div className="flex items-center justify-center bg-[#111] rounded-2xl border border-border p-6 md:p-8 mb-10">
+            <div className="flex items-center justify-center bg-[#f4f4f6] rounded-2xl border border-border p-4 md:p-6 mb-10 overflow-hidden">
               <Image
                 src={content.heroImage}
                 alt="ReadyLead product screenshot"
-                width={1600}
-                height={1000}
+                width={2048}
+                height={1402}
                 sizes="(max-width: 768px) 100vw, 896px"
-                className="w-full h-auto max-w-full object-contain"
+                className="w-full h-auto max-w-full object-cover rounded-xl shadow-sm"
               />
             </div>
 

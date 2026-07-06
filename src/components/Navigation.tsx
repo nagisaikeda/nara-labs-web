@@ -28,7 +28,8 @@ export function Navigation() {
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="fixed top-0 left-0 right-0 z-50 px-6 py-5"
+      className="fixed top-0 left-0 right-0 z-50 border-b border-white/[0.08] bg-[rgba(5,5,8,0.72)] backdrop-blur-[16px] supports-[backdrop-filter]:bg-[rgba(5,5,8,0.72)] px-6 py-4 md:py-5"
+      style={{ WebkitBackdropFilter: "blur(16px)" }}
     >
       <div className="mx-auto max-w-7xl flex items-center justify-between gap-4">
         <Link href="/" className="flex items-center gap-2.5 shrink-0">
