@@ -4,5 +4,7 @@ export type TeamMember = {
   bio: string;
   image: string;
   initials: string;
+  expertise?: string[];
   linkedin?: string;
+  subtitle?: string | string[];
 };

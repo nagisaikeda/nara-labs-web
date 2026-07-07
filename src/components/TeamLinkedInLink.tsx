@@ -14,19 +14,24 @@ function LinkedInIcon({ className }: { className?: string }) {
 type TeamLinkedInLinkProps = {
   name: string;
   linkedin: string;
+  className?: string;
 };
 
-export function TeamLinkedInLink({ name, linkedin }: TeamLinkedInLinkProps) {
+export function TeamLinkedInLink({
+  name,
+  linkedin,
+  className,
+}: TeamLinkedInLinkProps) {
   return (
     <a
       href={linkedin}
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`${name} on LinkedIn (opens in new tab)`}
-      className="inline-flex items-center gap-1.5 mt-3 mb-4 text-[13px] text-muted-soft hover:text-foreground transition-colors duration-300 rounded-sm"
+      className={`inline-flex items-center gap-1.5 text-[13px] text-muted-soft hover:text-foreground transition-colors duration-300 rounded-sm ${className ?? "mt-3 mb-4"}`}
     >
       <LinkedInIcon className="w-3.5 h-3.5 opacity-70" />
-      <span>LinkedIn</span>
+      <span>LinkedIn →</span>
     </a>
   );
 }

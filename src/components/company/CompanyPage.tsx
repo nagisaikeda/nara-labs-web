@@ -6,7 +6,7 @@ import { PageHero } from "@/components/PageHero";
 import { TeamCard } from "@/components/TeamCard";
 import { Footer } from "@/components/Footer";
 import { COMPANY_ABOUT, APPLIED_AI_LAB_MODEL } from "@/data/company";
-import { TEAM_MEMBERS } from "@/data/team";
+import { TEAM_MEMBERS, ADVISORS } from "@/data/team";
 import { motion } from "framer-motion";
 
 export function CompanyPage() {
@@ -116,6 +116,41 @@ export function CompanyPage() {
             {TEAM_MEMBERS.map((member, i) => (
               <TeamCard key={member.name} member={member} index={i} />
             ))}
+          </div>
+
+          <div className="mt-20 md:mt-24 pt-16 md:pt-20 border-t border-border">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="max-w-2xl mb-12"
+            >
+              <h3
+                id="company-advisors-heading"
+                className="font-serif text-[clamp(1.5rem,2.5vw,2rem)] font-normal tracking-[-0.02em] text-foreground mb-4"
+              >
+                Advisors
+              </h3>
+              <p className="text-[15px] leading-relaxed text-muted">
+                Strategic advisors who help shape how we discover customers and
+                validate product direction.
+              </p>
+            </motion.div>
+
+            <div
+              className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6"
+              aria-labelledby="company-advisors-heading"
+            >
+              {ADVISORS.map((advisor, i) => (
+                <TeamCard
+                  key={advisor.name}
+                  member={advisor}
+                  index={i}
+                  variant="advisor"
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
