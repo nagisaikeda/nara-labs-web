@@ -46,15 +46,28 @@ export const ADVISORS: TeamMember[] = [
   {
     name: "Simon Spagnoletti",
     role: "Customer Discovery Advisor",
-    expertise: [
-      "Senior UX Researcher",
-      "Customer Discovery",
-      "Former PayPal",
-      "Cash App",
-    ],
+    subtitle: "Senior UX Researcher • Former PayPal • Cash App",
+    expertise: ["Customer Discovery", "Product Validation"],
     bio: "Simon advises Nara Labs on customer discovery and product validation. He brings research leadership from consumer financial products and AI initiatives at PayPal and Cash App. He helps refine customer interviews and turn user insights into product direction.",
     image: "",
     initials: "SS",
     linkedin: "https://www.linkedin.com/in/simonspagnoletti",
+  },
+  {
+    name: "Jing Wang",
+    role: "AI Systems Advisor",
+    subtitle:
+      "Former Co-Founder & CEO, MiraRobo • Former Microsoft • Carnegie Mellon University",
+    expertise: [
+      "AI Systems",
+      "Applied Machine Learning",
+      "LLM Applications",
+      "Enterprise AI",
+      "Technical Strategy",
+    ],
+    bio: "Jing advises Nara Labs on AI systems architecture, technical product strategy, and the application of modern machine learning to real-world products. With experience leading AI startups and building LLM-powered systems at Microsoft, she provides guidance on scalable AI architecture, platform strategy, and technical decision-making.",
+    image: "",
+    initials: "JW",
+    linkedin: "https://www.linkedin.com/in/jingwangsophia",
   },
 ];

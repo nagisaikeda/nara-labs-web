@@ -23,9 +23,20 @@ function getExpertiseLines(member: TeamMember): string[] {
   return Array.isArray(member.subtitle) ? member.subtitle : [member.subtitle];
 }
 
+function getHeadline(member: TeamMember): string | null {
+  if (!member.expertise?.length || !member.subtitle) {
+    return null;
+  }
+
+  return Array.isArray(member.subtitle)
+    ? member.subtitle.join(" • ")
+    : member.subtitle;
+}
+
 export function TeamCard({ member, index, variant = "core" }: TeamCardProps) {
   const isAdvisor = variant === "advisor";
   const expertiseLines = getExpertiseLines(member);
+  const headline = getHeadline(member);
 
   return (
     <motion.article
@@ -51,8 +62,18 @@ export function TeamCard({ member, index, variant = "core" }: TeamCardProps) {
 
       <p className="mt-1.5 text-[13px] text-muted">{member.role}</p>
 
+      {headline && (
+        <p className="mt-2 text-[11px] font-medium text-foreground/75 leading-relaxed">
+          {headline}
+        </p>
+      )}
+
       {expertiseLines.length > 0 && (
-        <p className="mt-4 text-[11px] font-medium tracking-[0.04em] text-muted-soft leading-relaxed">
+        <p
+          className={`text-[11px] font-medium tracking-[0.04em] text-muted-soft leading-relaxed ${
+            headline ? "mt-3" : "mt-4"
+          }`}
+        >
           {expertiseLines.join(" • ")}
         </p>
       )}
