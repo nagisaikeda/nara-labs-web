@@ -5,9 +5,84 @@ import { Navigation } from "@/components/Navigation";
 import { PageHero } from "@/components/PageHero";
 import { TeamCard } from "@/components/TeamCard";
 import { Footer } from "@/components/Footer";
-import { COMPANY_ABOUT, APPLIED_AI_LAB_MODEL } from "@/data/company";
-import { TEAM_MEMBERS, ADVISORS } from "@/data/team";
+import {
+  COMPANY_ABOUT,
+  APPLIED_AI_LAB_MODEL,
+  CORE_TEAM_SECTION,
+  COLLABORATING_ENGINEERS_SECTION,
+  ADVISORS_SECTION,
+} from "@/data/company";
+import {
+  CORE_TEAM,
+  COLLABORATING_ENGINEERS,
+  ADVISORS,
+} from "@/data/team";
+import type { TeamMember } from "@/types/team";
 import { motion } from "framer-motion";
+
+type PeopleSectionProps = {
+  id: string;
+  headingId: string;
+  title: string;
+  subtitle?: string;
+  description: string;
+  members: TeamMember[];
+  variant?: "core" | "advisor";
+  className?: string;
+};
+
+function PeopleSection({
+  id,
+  headingId,
+  title,
+  subtitle,
+  description,
+  members,
+  variant = "core",
+  className = "pb-20",
+}: PeopleSectionProps) {
+  return (
+    <section
+      id={id}
+      className={`relative px-6 border-t border-border pt-20 ${className}`}
+      aria-labelledby={headingId}
+    >
+      <div className="max-w-6xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="max-w-2xl mb-12"
+        >
+          <h2
+            id={headingId}
+            className="font-serif text-[clamp(1.75rem,3vw,2.5rem)] font-normal tracking-[-0.02em] text-foreground mb-4"
+          >
+            {title}
+          </h2>
+          {subtitle && (
+            <p className="text-[15px] leading-relaxed text-foreground mb-3">
+              {subtitle}
+            </p>
+          )}
+          <p className="text-[15px] leading-relaxed text-muted">{description}</p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
+          {members.map((member, i) => (
+            <TeamCard
+              key={member.name}
+              member={member}
+              index={i}
+              variant={variant}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export function CompanyPage() {
   return (
@@ -88,72 +163,34 @@ export function CompanyPage() {
         </div>
       </section>
 
-      <section
+      <PeopleSection
         id="team"
-        className="relative pb-32 md:pb-48 px-6 border-t border-border pt-20"
-        aria-labelledby="company-team-heading"
-      >
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="max-w-2xl mb-12"
-          >
-            <h2
-              id="company-team-heading"
-              className="font-serif text-[clamp(1.75rem,3vw,2.5rem)] font-normal tracking-[-0.02em] text-foreground mb-4"
-            >
-              Team
-            </h2>
-            <p className="text-[15px] leading-relaxed text-muted">
-              The people building applied AI products from the lab.
-            </p>
-          </motion.div>
+        headingId="company-core-team-heading"
+        title={CORE_TEAM_SECTION.title}
+        subtitle={CORE_TEAM_SECTION.subtitle}
+        description={CORE_TEAM_SECTION.description}
+        members={CORE_TEAM}
+      />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
-            {TEAM_MEMBERS.map((member, i) => (
-              <TeamCard key={member.name} member={member} index={i} />
-            ))}
-          </div>
+      <PeopleSection
+        id="advisors"
+        headingId="company-advisors-heading"
+        title={ADVISORS_SECTION.title}
+        subtitle={ADVISORS_SECTION.subtitle}
+        description={ADVISORS_SECTION.description}
+        members={ADVISORS}
+        variant="advisor"
+      />
 
-          <div className="mt-20 md:mt-24 pt-16 md:pt-20 border-t border-border">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="max-w-2xl mb-12"
-            >
-              <h3
-                id="company-advisors-heading"
-                className="font-serif text-[clamp(1.5rem,2.5vw,2rem)] font-normal tracking-[-0.02em] text-foreground mb-4"
-              >
-                Advisors
-              </h3>
-              <p className="text-[15px] leading-relaxed text-muted">
-                Strategic advisors who help shape how we discover customers and
-                validate product direction.
-              </p>
-            </motion.div>
-
-            <div
-              className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6"
-              aria-labelledby="company-advisors-heading"
-            >
-              {ADVISORS.map((advisor, i) => (
-                <TeamCard
-                  key={advisor.name}
-                  member={advisor}
-                  index={i}
-                  variant="advisor"
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <PeopleSection
+        id="collaborating-engineers"
+        headingId="company-collaborating-engineers-heading"
+        title={COLLABORATING_ENGINEERS_SECTION.title}
+        subtitle={COLLABORATING_ENGINEERS_SECTION.subtitle}
+        description={COLLABORATING_ENGINEERS_SECTION.description}
+        members={COLLABORATING_ENGINEERS}
+        className="pb-32 md:pb-48"
+      />
 
       <Footer />
     </main>

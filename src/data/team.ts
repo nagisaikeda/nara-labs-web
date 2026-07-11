@@ -1,6 +1,6 @@
 import type { TeamMember } from "@/types/team";
 
-export const TEAM_MEMBERS: TeamMember[] = [
+export const CORE_TEAM: TeamMember[] = [
   {
     name: "Nagisa Ikeda",
     role: "Founder",
@@ -39,6 +39,21 @@ export const TEAM_MEMBERS: TeamMember[] = [
     image: "/team/jiawen.png",
     initials: "JZ",
     linkedin: "https://www.linkedin.com/in/jiawen-zhang042/",
+  },
+];
+
+/** @deprecated Use CORE_TEAM — kept for structured data and legacy routes */
+export const TEAM_MEMBERS = CORE_TEAM;
+
+export const COLLABORATING_ENGINEERS: TeamMember[] = [
+  {
+    name: "Shreeya",
+    role: "Machine Learning Engineering",
+    expertise: ["Machine Learning", "AI Models", "Research"],
+    bio: "Collaborates on machine learning systems, model evaluation, and AI product development across Nara Labs initiatives.",
+    image: "",
+    initials: "S",
+    linkedin: "https://www.linkedin.com/in/shreeyadasa/",
   },
 ];
 
