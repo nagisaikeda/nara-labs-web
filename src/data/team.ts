@@ -29,13 +29,13 @@ export const CORE_TEAM: TeamMember[] = [
   },
   {
     name: "Jiawen Zhang",
-    role: "AI Engineering, Implementation",
+    role: "Contributing Engineer",
     expertise: [
       "AI Engineering",
       "Full-Stack Implementation",
       "Product Development",
     ],
-    bio: "Founding engineer shipping product concepts across frontend, backend, and AI-assisted workflows. Focuses on fast iteration, clean implementation, and integrating requirements into production-ready systems. Builds the foundation for Ahead and future agentic products.",
+    bio: "Contributing Engineer supporting AI engineering and product implementation across frontend, backend, and AI-assisted workflows. Contributes to rapid prototyping, feature implementation, and early-stage product development while collaborating with the team to explore and validate new AI product ideas.",
     image: "/team/jiawen.png",
     initials: "JZ",
     linkedin: "https://www.linkedin.com/in/jiawen-zhang042/",
