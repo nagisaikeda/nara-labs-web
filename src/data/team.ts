@@ -55,6 +55,15 @@ export const COLLABORATING_ENGINEERS: TeamMember[] = [
     initials: "S",
     linkedin: "https://www.linkedin.com/in/shreeyadasa/",
   },
+  {
+    name: "Adithya Gnanasundar",
+    role: "Growth & AI Products",
+    expertise: ["Growth Strategy", "AI Products", "Customer Discovery"],
+    bio: "Collaborates on AI product strategy, customer discovery, and go-to-market initiatives across Nara Labs.",
+    image: "",
+    initials: "AG",
+    linkedin: "https://www.linkedin.com/",
+  },
 ];
 
 export const ADVISORS: TeamMember[] = [
