@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import { ProfileAvatar } from "@/components/ProfileAvatar";
-import { TeamLinkedInLink } from "@/components/TeamLinkedInLink";
+import { LinkedInIcon, TeamLinkedInLink } from "@/components/TeamLinkedInLink";
+import { OptionalExternalLink } from "@/components/OptionalExternalLink";
 import type { TeamMember } from "@/types/team";
 
 type TeamCardProps = {
@@ -33,6 +34,54 @@ function getHeadline(member: TeamMember): string | null {
     : member.subtitle;
 }
 
+function PartnerIdentityTile({ name }: { name: string }) {
+  return (
+    <div
+      role="img"
+      aria-label={name}
+      className="relative flex size-40 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-border-strong bg-surface-elevated"
+    >
+      <div
+        aria-hidden
+        className="absolute inset-3 rounded-lg border border-white/[0.06]"
+      />
+      <div aria-hidden className="relative flex flex-col items-center select-none">
+        <span className="pl-[0.32em] text-[15px] font-semibold uppercase tracking-[0.32em] text-foreground/85">
+          {name}
+        </span>
+        <span className="mt-2.5 pl-[0.2em] text-[9px] font-medium uppercase tracking-[0.2em] text-muted-soft">
+          AI system
+        </span>
+      </div>
+    </div>
+  );
+}
+
+const partnerLinkClass =
+  "inline-flex items-center gap-1.5 rounded-sm text-[13px] text-muted-soft transition-colors duration-300 hover:text-foreground";
+
+function PartnerLinks({ member }: { member: TeamMember }) {
+  return (
+    <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2">
+      <OptionalExternalLink
+        href={member.website}
+        label={`${member.name} website`}
+        className={partnerLinkClass}
+      >
+        {member.name} ↗
+      </OptionalExternalLink>
+      <OptionalExternalLink
+        href={member.linkedin}
+        label={`${member.name} on LinkedIn`}
+        className={partnerLinkClass}
+      >
+        <LinkedInIcon className="h-3.5 w-3.5 opacity-70" />
+        LinkedIn ↗
+      </OptionalExternalLink>
+    </div>
+  );
+}
+
 export function TeamCard({ member, index, variant = "core" }: TeamCardProps) {
   const isAdvisor = variant === "advisor";
   const expertiseLines = getExpertiseLines(member);
@@ -47,7 +96,11 @@ export function TeamCard({ member, index, variant = "core" }: TeamCardProps) {
       className="flex h-full flex-col rounded-2xl border border-border bg-surface/20 p-6 pt-8 transition-colors duration-300 hover:border-border-strong hover:bg-surface/25"
     >
       <div className="mb-6 flex justify-center">
-        <ProfileAvatar name={member.name} image={member.image} />
+        {member.kind === "partner" ? (
+          <PartnerIdentityTile name={member.name} />
+        ) : (
+          <ProfileAvatar name={member.name} image={member.image} />
+        )}
       </div>
 
       {isAdvisor && (
@@ -82,7 +135,9 @@ export function TeamCard({ member, index, variant = "core" }: TeamCardProps) {
         {member.bio}
       </p>
 
-      {member.linkedin && (
+      {member.kind === "partner" ? (
+        <PartnerLinks member={member} />
+      ) : member.linkedin && (
         <TeamLinkedInLink
           name={member.name}
           linkedin={member.linkedin}

@@ -232,7 +232,7 @@ function BookDemoForm() {
                   }
                   className={inputClassName("interest")}
                 >
-                  <option value="readylead">ReadyLead (Flagship)</option>
+                  <option value="readylead">ReadyLead</option>
                   <option value="probeiq">ProbeIQ</option>
                   <option value="design-partner">Design partner program</option>
                   <option value="research">Lab research (Ahead, Local PM OS)</option>

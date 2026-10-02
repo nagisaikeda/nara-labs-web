@@ -22,19 +22,18 @@ const ebGaramond = EB_Garamond({
 export const metadata: Metadata = {
   metadataBase: new URL("https://nara-labs.com"),
   ...createPageMetadata({
-    title: "Nara Labs — Applied AI Products for Specialized Industries",
+    title: "Nara Labs — Intelligence for the world we live in",
     description:
-      "Nara Labs is an Applied AI Lab that discovers painful workflows and turns them into configurable AI products. Evaluate ReadyLead, ProbeIQ, and upcoming products from the lab.",
+      "Nara Labs builds AI systems that develop persistent understanding of real environments — observing what changes, reasoning with context, taking action, and learning over time. Nara is our flagship home intelligence.",
     path: "/",
     keywords: [
       "Nara Labs",
-      "Applied AI Lab",
+      "Nara",
+      "Home intelligence",
+      "Persistent AI",
+      "AI lab",
       "ReadyLead",
       "ProbeIQ",
-      "AI Products",
-      "Design Partners",
-      "Growth Intelligence",
-      "AI Tutor",
     ],
   }),
 };

@@ -55,6 +55,26 @@
   --color-focus-ring: var(--focus-ring-color);
   --font-sans: var(--font-inter);
   --font-serif: var(--font-eb-garamond);
+
+  /* Nara product tokens: only resolve inside `.nara-product`. */
+  --color-nara-canvas: var(--nara-canvas);
+  --color-nara-background: var(--nara-background);
+  --color-nara-surface: var(--nara-surface);
+  --color-nara-surface-sunk: var(--nara-surface-sunk);
+  --color-nara-foreground: var(--nara-foreground);
+  --color-nara-body: var(--nara-body);
+  --color-nara-muted: var(--nara-muted);
+  --color-nara-border: var(--nara-border);
+  --color-nara-border-strong: var(--nara-border-strong);
+  --color-nara-green: var(--nara-green);
+  --color-nara-green-strong: var(--nara-green-strong);
+  --color-nara-green-soft: var(--nara-green-soft);
+  --color-nara-sage: var(--nara-sage);
+  --color-nara-sage-text: var(--nara-sage-text);
+  --color-nara-amber: var(--nara-amber);
+  --color-nara-amber-text: var(--nara-amber-text);
+  --color-nara-amber-soft: var(--nara-amber-soft);
+  --color-nara-attention: var(--nara-attention);
 }
 
 body {
@@ -241,4 +261,70 @@ select:focus-visible {
 ::selection {
   background: rgba(200, 184, 224, 0.3);
   color: var(--foreground);
+}
+
+/* ------------------------------------------------------------------
+   Nara product world (/nara). Scoped so Nara Labs routes are unaffected.
+   ------------------------------------------------------------------ */
+
+.nara-product {
+  --nara-canvas: #fef7ed;
+  --nara-background: #f8f2e8;
+  --nara-surface: #fffdf8;
+  --nara-surface-sunk: #f2ebdf;
+  --nara-foreground: #1d2420;
+  --nara-body: #4b4f49;
+  --nara-muted: #6e6a61;
+  --nara-border: #e6dfd2;
+  --nara-border-strong: #d6cdbd;
+  --nara-green: #2c5641;
+  --nara-green-strong: #213f31;
+  --nara-green-soft: #e5ede5;
+  --nara-sage: #6f9278;
+  --nara-sage-text: #4f6e56;
+  --nara-amber: #d6982f;
+  --nara-amber-text: #8a5a12;
+  --nara-amber-soft: #f8ecd6;
+  --nara-attention: #d1604a;
+  --nara-shadow-soft: 0 1px 2px rgba(64, 50, 30, 0.04),
+    0 14px 36px -16px rgba(64, 50, 30, 0.18);
+
+  --focus-ring-color: var(--nara-green);
+  --focus-ring-offset-color: var(--nara-canvas);
+
+  background: var(--nara-background);
+  color: var(--nara-foreground);
+}
+
+.nara-product ::selection {
+  background: rgba(44, 86, 65, 0.16);
+  color: var(--nara-foreground);
+}
+
+.nara-product .nara-shadow {
+  box-shadow: var(--nara-shadow-soft);
+}
+
+.nara-image-fade {
+  -webkit-mask-image: radial-gradient(
+    ellipse 70% 72% at 50% 52%,
+    #000 62%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 70% 72% at 50% 52%,
+    #000 62%,
+    transparent 100%
+  );
+}
+
+/* Keep the global Nara Labs nav legibly dark over the light Nara canvas. */
+.nara-chrome > nav {
+  background-color: rgba(8, 8, 10, 0.94);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html:has(.nara-product) {
+    scroll-behavior: smooth;
+  }
 }

@@ -41,17 +41,9 @@ export const APPLIED_AI_LAB_MODEL = {
 
 export const CORE_TEAM_SECTION = {
   title: "Core Team",
-  subtitle: "The people building Nara Labs every day.",
+  subtitle: "The team building Nara Labs every day.",
   description:
     "Product, engineering, and company leadership responsible for executing our vision and shipping applied AI products.",
-} as const;
-
-export const COLLABORATING_ENGINEERS_SECTION = {
-  title: "Collaborating Engineers",
-  subtitle:
-    "Technical collaborators working with Nara Labs across AI, machine learning, and engineering.",
-  description:
-    "We collaborate with exceptional engineers and researchers on selected projects, prototypes, and production systems. These collaborators bring specialized expertise while working alongside the core team to accelerate product development.",
 } as const;
 
 export const ADVISORS_SECTION = {

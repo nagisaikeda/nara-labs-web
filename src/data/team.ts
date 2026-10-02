@@ -1,4 +1,5 @@
 import type { TeamMember } from "@/types/team";
+import { LABOTR_LINKEDIN_URL, LABOTR_SITE_URL } from "@/data/labotr";
 
 export const CORE_TEAM: TeamMember[] = [
   {
@@ -15,17 +16,19 @@ export const CORE_TEAM: TeamMember[] = [
     linkedin: "https://www.linkedin.com/in/nagisaikeda",
   },
   {
-    name: "Eddy",
-    role: "AI / Machine Learning Engineering",
+    kind: "partner",
+    name: "Labotr",
+    role: "AI Tech Lead",
     expertise: [
-      "Machine Learning",
-      "Backend Systems",
-      "Agent Architecture",
+      "Agentic Engineering",
+      "Architecture",
+      "Product Development",
     ],
-    bio: "AI and ML engineer building production pipelines, agent systems, and local AI infrastructure. Experience with risk scoring, feature engineering at scale, and rapid hackathon-to-product execution. Drives the technical foundation behind Nara Labs prototypes and flagship products.",
-    image: "/team/eddy.jpg",
-    initials: "E",
-    linkedin: "https://www.linkedin.com/in/jiajunh/",
+    bio: "Labotr works alongside Nara Labs as its AI Tech Lead, helping translate product intent into technical plans, implementation, and working software.",
+    image: "",
+    initials: "L",
+    website: LABOTR_SITE_URL,
+    linkedin: LABOTR_LINKEDIN_URL,
   },
   {
     name: "Jiawen Zhang",
@@ -44,27 +47,6 @@ export const CORE_TEAM: TeamMember[] = [
 
 /** @deprecated Use CORE_TEAM — kept for structured data and legacy routes */
 export const TEAM_MEMBERS = CORE_TEAM;
-
-export const COLLABORATING_ENGINEERS: TeamMember[] = [
-  {
-    name: "Shreeya",
-    role: "Machine Learning Engineering",
-    expertise: ["Machine Learning", "AI Models", "Research"],
-    bio: "Collaborates on machine learning systems, model evaluation, and AI product development across Nara Labs initiatives.",
-    image: "",
-    initials: "S",
-    linkedin: "https://www.linkedin.com/in/shreeyadasa/",
-  },
-  {
-    name: "Adithya Gnanasundar",
-    role: "Growth & AI Products",
-    expertise: ["Growth Strategy", "AI Products", "Customer Discovery"],
-    bio: "Collaborates on AI product strategy, customer discovery, and go-to-market initiatives across Nara Labs.",
-    image: "",
-    initials: "AG",
-    linkedin: "https://www.linkedin.com/",
-  },
-];
 
 export const ADVISORS: TeamMember[] = [
   {

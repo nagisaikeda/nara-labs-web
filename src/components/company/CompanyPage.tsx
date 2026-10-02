@@ -9,14 +9,9 @@ import {
   COMPANY_ABOUT,
   APPLIED_AI_LAB_MODEL,
   CORE_TEAM_SECTION,
-  COLLABORATING_ENGINEERS_SECTION,
   ADVISORS_SECTION,
 } from "@/data/company";
-import {
-  CORE_TEAM,
-  COLLABORATING_ENGINEERS,
-  ADVISORS,
-} from "@/data/team";
+import { CORE_TEAM, ADVISORS } from "@/data/team";
 import type { TeamMember } from "@/types/team";
 import { motion } from "framer-motion";
 
@@ -180,15 +175,6 @@ export function CompanyPage() {
         description={ADVISORS_SECTION.description}
         members={ADVISORS}
         variant="advisor"
-      />
-
-      <PeopleSection
-        id="collaborating-engineers"
-        headingId="company-collaborating-engineers-heading"
-        title={COLLABORATING_ENGINEERS_SECTION.title}
-        subtitle={COLLABORATING_ENGINEERS_SECTION.subtitle}
-        description={COLLABORATING_ENGINEERS_SECTION.description}
-        members={COLLABORATING_ENGINEERS}
         className="pb-32 md:pb-48"
       />
 

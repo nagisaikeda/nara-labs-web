@@ -1,69 +1,102 @@
-export const WORKFLOW_PROBLEMS = [
-  {
-    id: "growth-intelligence",
-    title: "Growth teams miss high-intent signals",
-    description:
-      "Buying intent is scattered across product usage, content engagement, and conversations. Teams waste time on cold outreach instead of the leads most likely to convert.",
-  },
-  {
-    id: "learning-at-scale",
-    title: "Training content doesn't adapt to learners",
-    description:
-      "Educational video and documentation are passive. Learners need interactive guidance grounded in the source material, not another static library.",
-  },
-  {
-    id: "operational-context",
-    title: "Specialized workflows run on fragmented context",
-    description:
-      "Industry teams lose hours stitching together signals across tools, documents, and conversations before they can act with confidence.",
-  },
+import { FLAGSHIP_PRODUCTS, RESEARCH_PRODUCTS } from "@/data/products-catalog";
+
+export const LAB_HERO = {
+  eyebrow: "Nara Labs",
+  headlineLines: ["Intelligence for the", "world we live in."],
+  body: "We build AI systems that develop persistent understanding of real environments — observing what changes, reasoning with context, taking action, and learning over time.",
+} as const;
+
+export const INTELLIGENCE_LOOP = [
+  { id: "observe", label: "Observe", note: "what changes" },
+  { id: "understand", label: "Understand", note: "with context" },
+  { id: "act", label: "Act", note: "with authorization" },
+  { id: "learn", label: "Learn", note: "from outcomes" },
 ] as const;
 
-export const CUSTOMER_OUTCOMES = [
-  {
-    id: "prioritize",
-    title: "Prioritize the right opportunities",
-    description:
-      "Surface high-intent signals and recommended next actions so teams focus effort where conversion is most likely.",
-  },
-  {
-    id: "configure",
-    title: "Configure products to your workflow",
-    description:
-      "Deploy applied AI products that adapt to your industry's language, data sources, and operating constraints.",
-  },
-  {
-    id: "ship",
-    title: "Ship faster with design partners",
-    description:
-      "Work directly with the lab to validate workflows, refine product behavior, and reach production readiness sooner.",
-  },
-] as const;
+export const THESIS = {
+  eyebrow: "The Thesis",
+  title: "Beyond the prompt.",
+  paragraphs: [
+    "Today's AI is remarkably capable inside a conversation. But the world outside the conversation is persistent, changing, and interconnected.",
+    "We build systems designed to understand what persists between interactions — what changed, what happened before, what matters now, and what should happen next.",
+  ],
+  principles: [
+    { id: "state", term: "State", line: "The world doesn't reset between prompts." },
+    {
+      id: "context",
+      term: "Context",
+      line: "Meaning depends on what happened before and what is changing now.",
+    },
+    {
+      id: "action",
+      term: "Action",
+      line: "Intelligence becomes useful when it can change what happens next.",
+    },
+    {
+      id: "learning",
+      term: "Learning",
+      line: "Every verified outcome can improve the system's understanding of its environment.",
+    },
+  ],
+} as const;
 
-export const WHY_DIFFERENT = [
-  {
-    id: "lab-model",
-    title: "Applied AI Lab, not a services shop",
-    description:
-      "We discover painful workflows in specialized industries and productize them into configurable AI systems you can evaluate and deploy.",
-  },
-  {
-    id: "product-first",
-    title: "Products customers can evaluate",
-    description:
-      "ReadyLead and ProbeIQ are built as repeatable products with clear use cases, demos, and deployment paths — not one-off experiments.",
-  },
-  {
-    id: "workflow-depth",
-    title: "Depth in workflow design",
-    description:
-      "We combine product design, AI engineering, and domain workflow mapping to turn complex operational pain into software people actually use.",
-  },
-] as const;
+export const PRIMITIVES = {
+  eyebrow: "Primitives",
+  items: [
+    "Persistent state",
+    "Multimodal observation",
+    "Context models",
+    "Reasoning under uncertainty",
+    "Human authorization",
+    "Agentic action",
+    "Outcome verification",
+    "Learning loops",
+  ],
+} as const;
 
-export const DESIGN_PARTNERS_COPY = {
-  title: "Become a design partner",
+export type LabMaturity = "Commercial" | "Experiment" | "Research";
+
+export type LabEntry = {
+  id: string;
+  name: string;
+  tagline: string;
+  href: string;
+  maturity: LabMaturity;
+  accolade?: string;
+};
+
+const LAB_ORDER: { id: string; maturity: LabMaturity }[] = [
+  { id: "readylead", maturity: "Commercial" },
+  { id: "ahead", maturity: "Research" },
+  { id: "local-pm-os", maturity: "Experiment" },
+  { id: "probeiq", maturity: "Commercial" },
+];
+
+const CATALOG = [...FLAGSHIP_PRODUCTS, ...RESEARCH_PRODUCTS];
+
+export const FROM_THE_LAB = {
+  eyebrow: "02 / From the Lab",
+  title: "From the Lab",
   description:
-    "We work with a small number of design partners in specialized industries to validate workflows, shape product behavior, and co-develop the next generation of applied AI products from the lab.",
-  cta: "Apply as a design partner",
+    "Experiments in persistent intelligence across different environments.",
+  entries: LAB_ORDER.flatMap(({ id, maturity }): LabEntry[] => {
+    const product = CATALOG.find((p) => p.id === id);
+    const href = product?.externalHref ?? product?.href;
+    if (!product || !href) return [];
+    return [
+      {
+        id,
+        name: product.name,
+        tagline: product.tagline,
+        href,
+        maturity,
+        accolade: product.accolade,
+      },
+    ];
+  }),
+} as const;
+
+export const NOTES_FROM_THE_LAB = {
+  eyebrow: "03 / Notes from the Lab",
+  title: "Notes from the Lab",
 } as const;

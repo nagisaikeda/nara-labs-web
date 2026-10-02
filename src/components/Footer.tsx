@@ -29,8 +29,7 @@ export function Footer() {
                 </span>
               </div>
               <p className="text-[14px] leading-relaxed text-muted max-w-xs">
-                Applied AI Lab building configurable products for specialized
-                industries. ReadyLead is our flagship commercial product.
+                Building intelligence for the world we live in.
               </p>
             </div>
 
@@ -39,6 +38,12 @@ export function Footer() {
                 Products
               </p>
               <div className="space-y-3">
+                <Link
+                  href="/nara"
+                  className="block text-[14px] text-muted hover:text-foreground transition-colors duration-300"
+                >
+                  Nara
+                </Link>
                 <Link
                   href="/projects/readylead"
                   className="block text-[14px] text-muted hover:text-foreground transition-colors duration-300"

@@ -17,6 +17,8 @@ function personSchema(member: TeamMember) {
   };
 }
 
+const TEAM_PEOPLE = TEAM_MEMBERS.filter((member) => member.kind !== "partner");
+
 function organizationNode() {
   return {
     "@type": "Organization",
@@ -29,7 +31,7 @@ function organizationNode() {
       jobTitle: "Founder, Product & Design",
       sameAs: ["https://www.linkedin.com/in/nagisaikeda"],
     },
-    employee: TEAM_MEMBERS.map(personSchema),
+    employee: TEAM_PEOPLE.map(personSchema),
   };
 }
 
@@ -43,7 +45,7 @@ export function getOrganizationStructuredData() {
 export function getTeamStructuredData() {
   return {
     "@context": "https://schema.org",
-    "@graph": [organizationNode(), ...TEAM_MEMBERS.map(personSchema)],
+    "@graph": [organizationNode(), ...TEAM_PEOPLE.map(personSchema)],
   };
 }
 

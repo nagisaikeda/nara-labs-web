@@ -22,7 +22,7 @@ export type BookDemoFieldErrors = Partial<
 >;
 
 const INTEREST_LABELS: Record<BookDemoInterest, string> = {
-  readylead: "ReadyLead (Flagship)",
+  readylead: "ReadyLead",
   probeiq: "ProbeIQ",
   "design-partner": "Design partner program",
   research: "Lab research (Ahead, Local PM OS)",

@@ -13,7 +13,7 @@ function ProductTierBadge({ product }: ProductTierBadgeProps) {
     return (
       <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-border-strong bg-foreground/[0.06] text-[11px] font-semibold tracking-[0.12em] uppercase text-foreground">
         <span className="w-1.5 h-1.5 rounded-full bg-gradient-mint animate-pulse-soft" />
-        Flagship Product
+        Commercial Product
       </span>
     );
   }
@@ -21,7 +21,7 @@ function ProductTierBadge({ product }: ProductTierBadgeProps) {
   if (product.tier === "flagship-secondary") {
     return (
       <span className="px-3 py-1 rounded-full border border-border bg-surface/50 text-[11px] font-semibold tracking-[0.12em] uppercase text-muted">
-        Flagship
+        Commercial Product
       </span>
     );
   }

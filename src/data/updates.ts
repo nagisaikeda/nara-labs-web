@@ -3,10 +3,18 @@ export type UpdateEntry = {
   date: string;
   title: string;
   description?: string;
+  href?: string;
   sortOrder: number;
 };
 
 export const HOME_UPDATES: UpdateEntry[] = [
+  {
+    id: "nara-ai-collective-demo-night",
+    date: "September 2026",
+    title: "Nara selected for AI Collective Demo Night",
+    href: "/nara",
+    sortOrder: 6,
+  },
   {
     id: "yc-ai-growth",
     date: "June 2026",
@@ -40,6 +48,14 @@ export const HOME_UPDATES: UpdateEntry[] = [
 ];
 
 export const FULL_UPDATES: UpdateEntry[] = [
+  {
+    id: "nara-ai-collective-demo-night",
+    date: "September 2026",
+    title: "Nara selected for AI Collective Demo Night",
+    description: "Nara was selected to demo at AI Collective Demo Night.",
+    href: "/nara",
+    sortOrder: 9,
+  },
   {
     id: "yc-ai-growth",
     date: "June 2026",

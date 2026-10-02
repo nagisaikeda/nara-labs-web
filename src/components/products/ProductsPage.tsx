@@ -22,7 +22,7 @@ export function ProductsPage() {
       <Navigation />
       <PageHero
         title="Products"
-        subtitle="ReadyLead is our flagship commercial product — 2nd Place at the YC AI Growth Hackathon. ProbeIQ is our second flagship, both ready to evaluate, demo, and deploy."
+        subtitle="ReadyLead and ProbeIQ are commercial products, both ready to evaluate, demo, and deploy. ReadyLead took 2nd Place at the YC AI Growth Hackathon."
         supportingText="Research and incubation projects demonstrate where the Applied AI Lab is headed next."
       />
 

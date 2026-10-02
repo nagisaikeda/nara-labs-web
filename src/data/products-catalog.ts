@@ -2,8 +2,6 @@ import type { CustomerProduct } from "@/types/customer-product";
 
 export const READYLEAD_ACCOLADE = "2nd Place · YC AI Growth Hackathon";
 
-export const READYLEAD_CREDIBILITY_LINE = `${READYLEAD_ACCOLADE} · ReadyLead`;
-
 export const FLAGSHIP_PRODUCTS: CustomerProduct[] = [
   {
     id: "readylead",
