@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
-import { useNaraReveal } from "@/components/nara/useNaraReveal";
+import { NaraSectionHeader } from "@/components/nara/NaraStoryPrimitives";
 import { NARA_HOME_TWIN, NARA_HOME_TWIN_ID } from "@/data/nara";
 import {
   HomeTwinStack,
@@ -60,7 +59,6 @@ function LayerControl({
 }
 
 export function NaraHomeTwin() {
-  const reveal = useNaraReveal();
   const [preview, setPreview] = useState<HomeTwinLayerId | null>(null);
   const [pinned, setPinned] = useState<HomeTwinLayerId | null>(null);
   const active = preview ?? pinned;
@@ -92,23 +90,15 @@ export function NaraHomeTwin() {
       className="relative scroll-mt-20 bg-gradient-to-b from-nara-canvas to-nara-background px-5 py-24 sm:px-6 md:py-32 lg:py-40"
     >
       <div className="mx-auto max-w-6xl">
-        <motion.div
-          {...reveal({ inView: true, y: 18 })}
-          className="mx-auto max-w-2xl text-center"
-        >
-          <p className="mb-6 text-[12px] font-semibold uppercase tracking-[0.18em] text-nara-green">
-            {NARA_HOME_TWIN.eyebrow}
-          </p>
-          <h2
-            id="nara-home-twin-heading"
-            className="text-balance font-serif text-[clamp(2.3rem,5vw,4rem)] font-normal leading-[1.04] tracking-[-0.025em] text-nara-foreground"
-          >
-            {NARA_HOME_TWIN.headline}
-          </h2>
-          <p className="mx-auto mt-6 max-w-lg text-[17px] leading-relaxed text-nara-body">
-            {NARA_HOME_TWIN.body}
-          </p>
-        </motion.div>
+        <NaraSectionHeader
+          id="nara-home-twin-heading"
+          eyebrow={NARA_HOME_TWIN.eyebrow}
+          title={NARA_HOME_TWIN.title}
+          headline={NARA_HOME_TWIN.headline}
+          body={NARA_HOME_TWIN.body}
+          align="center"
+          thread={false}
+        />
 
         <div className="mt-14 md:mt-20 lg:mt-24">
           <div className="relative mx-auto flex max-w-[620px] lg:max-w-none">
