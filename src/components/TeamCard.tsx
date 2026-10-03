@@ -96,7 +96,7 @@ export function TeamCard({ member, index, variant = "core" }: TeamCardProps) {
       className="flex h-full flex-col rounded-2xl border border-border bg-surface/20 p-6 pt-8 transition-colors duration-300 hover:border-border-strong hover:bg-surface/25"
     >
       <div className="mb-6 flex justify-center">
-        {member.kind === "partner" ? (
+        {member.kind === "partner" && !member.image ? (
           <PartnerIdentityTile name={member.name} />
         ) : (
           <ProfileAvatar name={member.name} image={member.image} />

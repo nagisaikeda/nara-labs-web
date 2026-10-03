@@ -25,7 +25,7 @@ export const CORE_TEAM: TeamMember[] = [
       "Product Development",
     ],
     bio: "Labotr works alongside Nara Labs as its AI Tech Lead, helping translate product intent into technical plans, implementation, and working software.",
-    image: "",
+    image: "/team/labotr.png",
     initials: "L",
     website: LABOTR_SITE_URL,
     linkedin: LABOTR_LINKEDIN_URL,
