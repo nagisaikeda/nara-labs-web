@@ -14,9 +14,6 @@ export type NaraHomeTwinLayer = {
   description: string;
 };
 
-/** Placeholder until the early access destination exists. */
-export const NARA_EARLY_ACCESS_HREF = "#early-access";
-
 export const NARA_HOME_TWIN_ID = "home-twin";
 
 export const NARA_STATUS_LABELS: Record<NaraSystemStatus, string> = {
@@ -32,7 +29,7 @@ export const NARA_HERO = {
     "and takes care of it.",
   ],
   body: "Nara learns your home’s systems, notices when something changes, and helps take care of what happens next.",
-  primaryCta: { label: "Get early access", href: NARA_EARLY_ACCESS_HREF },
+  primaryCta: { label: "Get early access" },
   secondaryCta: {
     label: "See how Nara works",
     href: `#${NARA_HOME_TWIN_ID}`,
@@ -79,6 +76,21 @@ export const NARA_HOME_TWIN = {
       description: "What Nara has learned.",
     },
   ] satisfies NaraHomeTwinLayer[],
+} as const;
+
+export const NARA_EARLY_ACCESS = {
+  eyebrow: "Nara early access",
+  headline: "Your home, understood.",
+  body: "Join the early access list for Nara. We’ll let you know when we’re ready to welcome more homes.",
+  emailLabel: "Email address",
+  submit: "Join early access",
+  submitting: "Joining…",
+  privacy: "No spam. Just occasional updates from Nara.",
+  close: "Close",
+  successEyebrow: "You’re on the list",
+  successBody: "We’ll be in touch when Nara is ready for more homes.",
+  done: "Done",
+  genericError: "We couldn’t add you just now. Please try again.",
 } as const;
 
 export const NARA_HOMEPAGE_INTRO = {

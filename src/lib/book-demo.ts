@@ -29,7 +29,7 @@ const INTEREST_LABELS: Record<BookDemoInterest, string> = {
   general: "General inquiry",
 };
 
-const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+export const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function stripControlCharacters(value: string): string {
   return value.replace(/[\u0000-\u0008\u000B-\u000C\u000E-\u001F\u007F]/g, "");

@@ -318,6 +318,58 @@ select:focus-visible {
   );
 }
 
+.nara-dialog {
+  box-shadow: 0 1px 2px rgba(64, 50, 30, 0.05),
+    0 30px 70px -28px rgba(40, 32, 20, 0.32);
+}
+
+.nara-dialog::backdrop {
+  background: rgba(29, 36, 32, 0.36);
+}
+
+.nara-dialog[open] {
+  animation: nara-dialog-in 280ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nara-dialog[open]::backdrop {
+  animation: nara-backdrop-in 280ms ease-out;
+}
+
+.nara-dialog[data-closing] {
+  animation: nara-dialog-out 160ms ease-in forwards;
+}
+
+.nara-dialog[data-closing]::backdrop {
+  animation: nara-backdrop-out 160ms ease-in forwards;
+}
+
+@keyframes nara-dialog-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes nara-dialog-out {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(6px); }
+}
+
+@keyframes nara-backdrop-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes nara-backdrop-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nara-dialog,
+  .nara-dialog::backdrop {
+    animation: none !important;
+  }
+}
+
 /* Keep the global Nara Labs nav legibly dark over the light Nara canvas. */
 .nara-chrome > nav {
   background-color: rgba(8, 8, 10, 0.94);

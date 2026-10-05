@@ -13,6 +13,7 @@ import {
   NaraSystemGlyph as SystemGlyph,
 } from "@/components/nara/NaraSystemBadge";
 import { NARA_INSTANT, useNaraReveal } from "@/components/nara/useNaraReveal";
+import { NaraEarlyAccess } from "@/components/nara/NaraEarlyAccess";
 
 /**
  * Positions are percentages of the illustration box and are tied to
@@ -213,12 +214,10 @@ export function NaraHero() {
           {...reveal({ delay: 0.55, y: 12 })}
           className="mx-auto mt-10 flex max-w-sm flex-col items-stretch gap-3 sm:max-w-none sm:flex-row sm:items-center sm:justify-center"
         >
-          <a
-            href={NARA_HERO.primaryCta.href}
-            className="inline-flex min-h-12 items-center justify-center rounded-full bg-nara-green px-7 text-[15px] font-medium text-white transition-colors duration-300 hover:bg-nara-green-strong"
-          >
-            {NARA_HERO.primaryCta.label}
-          </a>
+          <NaraEarlyAccess
+            label={NARA_HERO.primaryCta.label}
+            className="inline-flex min-h-12 cursor-pointer items-center justify-center rounded-full bg-nara-green px-7 text-[15px] font-medium text-white transition-colors duration-300 hover:bg-nara-green-strong"
+          />
           <a
             href={NARA_HERO.secondaryCta.href}
             className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-nara-border-strong bg-nara-surface/60 px-7 text-[15px] font-medium text-nara-foreground transition-colors duration-300 hover:border-nara-foreground/30 hover:bg-nara-surface"
